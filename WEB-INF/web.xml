@@ -1,0 +1,12 @@
+<web-app>
+    <!-- LogIn : Redirection(GET) and Validation(POST) -->
+    <servlet>
+        <servlet-name>UserAuthenticatorServlet</servlet-name>
+        <servlet-class>servlets.sign_in.UserAuthenticatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserAuthenticatorServlet</servlet-name>
+        <url-pattern>/userAuthf</url-pattern>
+    </servlet-mapping>
+    <!-- LogIn -->
+</web-app>
