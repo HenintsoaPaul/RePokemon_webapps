@@ -18,17 +18,23 @@
       <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
         <ul id="sidebarnav">
 
+          <%
+          int idStatus = (int) request.getSession().getAttribute("idStatus");
+          if ( idStatus == 1 ) {
+          %>
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Home</span>
+            <span class="hide-menu">ENTITIES</span>
           </li>
 
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./index.html" aria-expanded="false">
+            <a class="sidebar-link" href="infoModel?action=1" aria-expanded="false">
               <span><i class="ti ti-layout-dashboard"></i></span>
-              <span class="hide-menu">Dashboard</span>
+              <span class="hide-menu">Add Model</span>
             </a>
           </li>
+          <% } %>
+
 
           <!-- COLLECTION -->
           <li class="nav-small-cap">
