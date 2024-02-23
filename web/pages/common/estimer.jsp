@@ -52,7 +52,7 @@
                                     dateFabrication: '<%= dateFabrication %>'
                                 }
                             ];
-                            const div = generateTableTopContainer(headers, data);
+                            const div = generateTableTopContainer("Ma Carte",headers, data, "estimation");
                             document.getElementById("infoCarte").appendChild(div);
                         </script>
                     </div>
