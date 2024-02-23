@@ -32,7 +32,7 @@
 
         <div class="mb-4">
             <label for="idStatus" class="form-label">Sign In as</label>
-            <select class="form-control" id="idStatus" name="idStatus" required>
+            <select class="form-select" id="idStatus" name="idStatus" required>
                 <option value="">Select a Status</option>
                 <% for ( Status status: statusList ) { %>
                 <option value="<%= status.getIdStatus() %>"> <%= status.getNomStatus() %> </option>
@@ -47,7 +47,7 @@
 
         <div class="d-flex align-items-center justify-content-center">
             <p class="fs-4 mb-0 fw-bold">New to RePokemon?</p>
-            <a class="text-primary fw-bold ms-2" href="authentication-register.jsp">
+            <a class="text-primary fw-bold ms-2" href="auth-register.jsp">
                 Create an account
             </a>
         </div>

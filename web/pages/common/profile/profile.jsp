@@ -24,6 +24,6 @@
         <%}
     %>
     <p>
-        <a href="update-user.jsp">Modifier mes informations personnelles</a>
+        <a href="update-profile.jsp">Modifier mes informations personnelles</a>
     </p>
 </section>

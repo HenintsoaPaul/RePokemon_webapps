@@ -2,11 +2,88 @@
     <!-- LogIn : Redirection(GET) and Validation(POST) -->
     <servlet>
         <servlet-name>UserAuthenticatorServlet</servlet-name>
-        <servlet-class>servlets.sign_in.UserAuthenticatorServlet</servlet-class>
+        <servlet-class>servlets.auth.UserAuthenticatorServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserAuthenticatorServlet</servlet-name>
         <url-pattern>/userAuthf</url-pattern>
     </servlet-mapping>
     <!-- LogIn -->
+
+    <!-- Collection : Redirection+Jetter(GET) -->
+    <servlet>
+        <servlet-name>CollectionServlet</servlet-name>
+        <servlet-class>servlets.collection.CollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CollectionServlet</servlet-name>
+        <url-pattern>/mesCartes</url-pattern>
+    </servlet-mapping>
+    <!-- Collection -->
+
+    <!-- InfoModel : Redirection(GET) -->
+    <servlet>
+        <servlet-name>ModelCarteServlet</servlet-name>
+        <servlet-class>servlets.collection.ModelCarteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModelCarteServlet</servlet-name>
+        <url-pattern>/infoModel</url-pattern>
+    </servlet-mapping>
+    <!-- InfoModel -->
+
+    <!-- InfoPokemon : Redirection(GET) -->
+    <servlet>
+        <servlet-name>PokemonServlet</servlet-name>
+        <servlet-class>servlets.collection.PokemonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PokemonServlet</servlet-name>
+        <url-pattern>/infoPokemon</url-pattern>
+    </servlet-mapping>
+    <!-- InfoPokemon -->
+
+    <!-- InfoSerie : Redirection(GET) -->
+    <servlet>
+        <servlet-name>SerieServlet</servlet-name>
+        <servlet-class>servlets.collection.SerieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieServlet</servlet-name>
+        <url-pattern>/infoSerie</url-pattern>
+    </servlet-mapping>
+    <!-- InfoSerie -->
+
+    <!-- Vente : Redirection(GET) -->
+    <servlet>
+        <servlet-name>VenteServlet</servlet-name>
+        <servlet-class>servlets.VenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteServlet</servlet-name>
+        <url-pattern>/vente</url-pattern>
+    </servlet-mapping>
+    <!-- Vente -->
+
+    <!-- Search : Redirection(GET) -->
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>servlets.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <!-- Search -->
+
+    <!-- Search : Redirection(GET) -->
+    <servlet>
+        <servlet-name>HomeRouterServlet</servlet-name>
+        <servlet-class>servlets.HomeRouterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeRouterServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <!-- Search -->
 </web-app>
