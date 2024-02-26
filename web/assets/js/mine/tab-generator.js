@@ -35,6 +35,12 @@ function generateTable(headers, data, dataType) {
         case "estimation" :
             generateRowsEstimation(tbody, data);
             break;
+        case "searchMine" :
+            generateRowsSearchMine(tbody, data);
+            break;
+        case "searchOthers" :
+            generateRowsSearchOthers(tbody, data);
+            break;
         case "infoModel" :
             generateRowsInfoModel(tbody, data);
             break;
@@ -100,6 +106,101 @@ function generateRowsEstimation(tbody, data) {
     });
 }
 
+function generateRowsSearchMine(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <a href="infoModel?action=1&idModelCarte=${item.idModelCarte}">
+                    <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
+                </a>
+            </td>
+            <td class="border-bottom-0">
+                <span class="mb-0 fs-4 fw-semibold">
+                    <mark>${item.PrixProprio}</mark>
+                </span>
+                <span class="fw-normal mb-0"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <span class="mb-0 fs-4 fw-semibold">
+                    <mark>${item.PrixMarche}</mark>
+                </span>
+                <span class="fw-normal mb-0"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.DateFabrication}</p>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.DateSortieModel}</p>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="mesCartes?action=3&idCarte=${item.idCarte}">
+                        <span class="badge bg-success rounded-3 fw-semibold">Estimer</span>
+                    </a>
+                    <a href="mesCartes?action=2&idCarte=${item.idCarte}">
+                        <span class="badge bg-danger rounded-3 fw-semibold">Jetter</span>
+                    </a>
+                </div>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsSearchOthers(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <a href="infoModel?action=1&idModelCarte=${item.idModelCarte}">
+                    <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
+                </a>
+            </td>
+            <td class="border-bottom-0">
+                <span class="mb-0 fs-4 fw-semibold">
+                    <mark>${item.PrixProprio}</mark>
+                </span>
+                <span class="fw-normal mb-0"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <span class="mb-0 fs-4 fw-semibold">
+                    <mark>${item.PrixMarche}</mark>
+                </span>
+                <span class="fw-normal mb-0"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.DateFabrication}</p>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.DateSortieModel}</p>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fw-semibold">
+                        <mark>${item.NomUser}</mark>
+                    </span>
+                </div>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
 function generateRowsInfoModel(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
@@ -154,7 +255,7 @@ function generateRowsListInfoModel(tbody, data) {
                 <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemon?idPokemon=${item.idPokemon}">
+                <a href="infoPokemon?action=3&idPokemon=${item.idPokemon}">
                     <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
                 </a>
             </td>
