@@ -47,6 +47,13 @@
               <span class="hide-menu">Add Type</span>
             </a>
           </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="generations?action=1" aria-expanded="false">
+              <span><i class="ti ti-layout-dashboard"></i></span>
+              <span class="hide-menu">Add Generation</span>
+            </a>
+          </li>
           <% } %>
 
 

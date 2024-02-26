@@ -38,8 +38,20 @@ function generateTable(headers, data, dataType) {
         case "infoModel" :
             generateRowsInfoModel(tbody, data);
             break;
+        case "listInfoModel" :
+            generateRowsListInfoModel(tbody, data);
+            break;
+        case "infoType" :
+            generateRowsInfoType(tbody, data);
+            break;
         case "listInfoType" :
             generateRowsListInfoType(tbody, data);
+            break;
+        case "generation" :
+            generateRowsGeneration(tbody, data);
+            break;
+        case "listGeneration" :
+            generateRowsListGeneration(tbody, data);
             break;
         case "infoPokemon" :
             generateRowsInfoPokemon(tbody, data);
@@ -49,12 +61,6 @@ function generateTable(headers, data, dataType) {
             break;
         case "infoSerie" :
             generateRowsInfoSerie(tbody, data);
-            break;
-        case "listInfoModel" :
-            generateRowsListInfoModel(tbody, data);
-            break;
-        case "infoType" :
-            generateRowsInfoType(tbody, data);
             break;
     }
 
@@ -294,6 +300,49 @@ function generateRowsListInfoType(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <a href="types?action=3&idType=${item.idType}">
+                    <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
+                </a>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsGeneration(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idGeneration}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-normal mb-0">${item.NomGeneration}</h6>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsListGeneration(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idGeneration}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-normal mb-0">${item.NomGeneration}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <a href="generations?action=3&idGeneration=${item.idGeneration}">
                     <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>

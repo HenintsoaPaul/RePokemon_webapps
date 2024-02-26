@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="entities.Type" %>
+<%@ page import="entities.Generation" %>
 <%
-    List<Type> types = ( List<Type> ) request.getAttribute( "types" );
+    List<Generation> generations = ( List<Generation> ) request.getAttribute( "generations" );
 
     String addMsg = "", addMsgClass = "";
     if ( request.getParameter( "addMsg" ) != null ) {
@@ -22,7 +22,8 @@
         }
     }
 %>
-<section id="list-types">
+<section id="list-generations">
+    <br>
     <br>
     <br>
     <br>
@@ -33,19 +34,19 @@
 
             <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
-                    <div id="list-info-types">
+                    <div id="list-info-generations">
                         <script>
-                            const header = ['Id', 'Nom Type', 'Action'];
+                            const header = ['Id', 'Nom Generation', 'Action'];
                             const data = [
-                                <% for ( Type type : types ) { %>
+                                <% for ( Generation generation : generations ) { %>
                                 {
-                                    idType: <%= type.getIdType() %>,
-                                    NomType: '<%= type.getNomType() %>'
+                                    idGeneration: <%= generation.getIdGeneration() %>,
+                                    NomGeneration: '<%= generation.getNomGeneration() %>'
                                 },
                                 <% } %>
                             ];
-                            const table = generateTableTopContainer("Liste des Types", header, data, "listInfoType");
-                            document.getElementById("list-info-types").appendChild(table);
+                            const table = generateTableTopContainer("Liste des Generations", header, data, "listGeneration");
+                            document.getElementById("list-info-generations").appendChild(table);
                         </script>
                     </div>
                 </div>
@@ -55,17 +56,18 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="POST" action="types?action=1">
+                                <form method="POST" action="generations?action=1">
                                     <div class="row">
-                                        <h3 class="form-label">Add new Type</h3>
+                                        <h3 class="form-label">Add new Generation</h3>
 
                                         <div class="col-lg-7 col-md-12">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="mb-3">
-                                                        <label for="nomType" class="form-label">Nom Type</label>
-                                                        <input type="text" class="form-control" id="nomType"
-                                                               name="nomType"
+                                                        <label for="nomGeneration" class="form-label">Nom
+                                                            Generation</label>
+                                                        <input type="text" class="form-control" id="nomGeneration"
+                                                               name="nomGeneration"
                                                                required>
                                                     </div>
                                                 </div>
@@ -74,7 +76,7 @@
                                     </div>
 
                                     <div>
-                                        <button type="submit" class="btn btn-success">Add Type</button>
+                                        <button type="submit" class="btn btn-success">Add Generation</button>
                                     </div>
 
                                     <br>
@@ -88,7 +90,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
