@@ -28,6 +28,13 @@
           </li>
 
           <li class="sidebar-item">
+            <a class="sidebar-link" href="cartes" aria-expanded="false">
+              <span><i class="ti ti-layout-dashboard"></i></span>
+              <span class="hide-menu">Add Cartes</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
             <a class="sidebar-link" href="infoModel?action=1" aria-expanded="false">
               <span><i class="ti ti-layout-dashboard"></i></span>
               <span class="hide-menu">Add Model</span>
