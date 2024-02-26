@@ -76,7 +76,7 @@
     </servlet-mapping>
     <!-- Search -->
 
-    <!-- Search : Redirection(GET) -->
+    <!-- HomeRouter : Redirection(GET) -->
     <servlet>
         <servlet-name>HomeRouterServlet</servlet-name>
         <servlet-class>servlets.HomeRouterServlet</servlet-class>
@@ -85,5 +85,16 @@
         <servlet-name>HomeRouterServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
-    <!-- Search -->
+    <!-- HomeRouter -->
+
+    <!-- Type : Redirection(GET) -->
+    <servlet>
+        <servlet-name>TypeServlet</servlet-name>
+        <servlet-class>servlets.TypeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TypeServlet</servlet-name>
+        <url-pattern>/types</url-pattern>
+    </servlet-mapping>
+    <!-- Type -->
 </web-app>
