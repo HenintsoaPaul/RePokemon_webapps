@@ -97,4 +97,15 @@
         <url-pattern>/types</url-pattern>
     </servlet-mapping>
     <!-- Type -->
+
+    <!-- Generation : Redirection(GET) -->
+    <servlet>
+        <servlet-name>GenerationServlet</servlet-name>
+        <servlet-class>servlets.GenerationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerationServlet</servlet-name>
+        <url-pattern>/generations</url-pattern>
+    </servlet-mapping>
+    <!-- Generation -->
 </web-app>
