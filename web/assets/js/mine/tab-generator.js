@@ -32,20 +32,29 @@ function generateTable(headers, data, dataType) {
 
     // Ajouter les données
     switch (dataType) {
-        case "infoModel" :
-            generateRowsInfoModel(tbody, data);
-            break;
         case "estimation" :
             generateRowsEstimation(tbody, data);
             break;
+        case "infoModel" :
+            generateRowsInfoModel(tbody, data);
+            break;
+        case "listInfoType" :
+            generateRowsListInfoType(tbody, data);
+            break;
         case "infoPokemon" :
             generateRowsInfoPokemon(tbody, data);
+            break;
+        case "listInfoPokemon" :
+            generateRowsListInfoPokemon(tbody, data);
             break;
         case "infoSerie" :
             generateRowsInfoSerie(tbody, data);
             break;
         case "listInfoModel" :
             generateRowsListInfoModel(tbody, data);
+            break;
+        case "infoType" :
+            generateRowsInfoType(tbody, data);
             break;
     }
 
@@ -98,7 +107,7 @@ function generateRowsInfoModel(tbody, data) {
                 <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemon?idPokemon=${item.idPokemon}">
+                <a href="infoPokemon?action=2&idPokemon=${item.idPokemon}">
                     <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
                 </a>
             </td>
@@ -197,6 +206,36 @@ function generateRowsInfoPokemon(tbody, data) {
     });
 }
 
+function generateRowsListInfoPokemon(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idPokemon}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0"><mark>${item.NomType}</mark></h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.NomGeneration}</p>
+            </td>
+            <td class="border-bottom-0">
+                <a href="infoPokemon?action=3&idPokemon=${item.idPokemon}">
+                    <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
+                </a>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
 function generateRowsInfoSerie(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
@@ -214,6 +253,49 @@ function generateRowsInfoSerie(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <p class="fw-bolder mb-0">${item.DateFin}</p>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsInfoType(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idType}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-normal mb-0">${item.NomType}</h6>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsListInfoType(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idType}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-normal mb-0">${item.NomType}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <a href="types?action=3&idType=${item.idType}">
+                    <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
+                </a>
             </td>
         `;
 
