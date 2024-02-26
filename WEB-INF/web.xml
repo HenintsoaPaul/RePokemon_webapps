@@ -108,4 +108,15 @@
         <url-pattern>/generations</url-pattern>
     </servlet-mapping>
     <!-- Generation -->
+
+    <!-- Carte : Redirection(GET) -->
+    <servlet>
+        <servlet-name>CarteServlet</servlet-name>
+        <servlet-class>servlets.CarteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarteServlet</servlet-name>
+        <url-pattern>/cartes</url-pattern>
+    </servlet-mapping>
+    <!-- Carte -->
 </web-app>
