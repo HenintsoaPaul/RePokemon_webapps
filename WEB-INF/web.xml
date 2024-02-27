@@ -94,7 +94,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TypeServlet</servlet-name>
-        <url-pattern>/types</url-pattern>
+        <url-pattern>/typesAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TypeUpServlet</servlet-name>
+        <servlet-class>servlets.TypeUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TypeUpServlet</servlet-name>
+        <url-pattern>/typesUp</url-pattern>
     </servlet-mapping>
     <!-- Type -->
 
@@ -105,7 +114,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>GenerationServlet</servlet-name>
-        <url-pattern>/generations</url-pattern>
+        <url-pattern>/generationsAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GenerationUpServlet</servlet-name>
+        <servlet-class>servlets.GenerationUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerationUpServlet</servlet-name>
+        <url-pattern>/generationsUp</url-pattern>
     </servlet-mapping>
     <!-- Generation -->
 
@@ -119,4 +137,16 @@
         <url-pattern>/cartes</url-pattern>
     </servlet-mapping>
     <!-- Carte -->
+
+<!--  test chart  -->
+    <!-- DataGetter : Redirection(GET) -->
+    <servlet>
+        <servlet-name>DataGetterServlet</servlet-name>
+        <servlet-class>servlets.chart.DataGetterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataGetterServlet</servlet-name>
+        <url-pattern>/bilan</url-pattern>
+    </servlet-mapping>
+    <!-- DataGetter -->
 </web-app>
