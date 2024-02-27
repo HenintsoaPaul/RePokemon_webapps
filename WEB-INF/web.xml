@@ -156,15 +156,15 @@
     </servlet-mapping>
     <!-- Carte -->
 
-<!--  test chart  -->
-    <!-- DataGetter : Redirection(GET) -->
+<!--  chart  -->
+    <!-- BilanVente : Redirection(GET) -->
     <servlet>
-        <servlet-name>DataGetterServlet</servlet-name>
-        <servlet-class>servlets.chart.DataGetterServlet</servlet-class>
+        <servlet-name>BilanVenteServlet</servlet-name>
+        <servlet-class>servlets.chart.BilanVenteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DataGetterServlet</servlet-name>
+        <servlet-name>BilanVenteServlet</servlet-name>
         <url-pattern>/bilan</url-pattern>
     </servlet-mapping>
-    <!-- DataGetter -->
+    <!-- BilanVente -->
 </web-app>
