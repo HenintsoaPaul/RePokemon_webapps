@@ -55,7 +55,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="POST" action="types?action=1">
+                                <form method="POST" action="typesAdd">
                                     <div class="row">
                                         <h3 class="form-label">Add new Type</h3>
 

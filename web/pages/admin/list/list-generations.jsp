@@ -56,7 +56,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="POST" action="generations?action=1">
+                                <form method="POST" action="generationsAdd">
                                     <div class="row">
                                         <h3 class="form-label">Add new Generation</h3>
 

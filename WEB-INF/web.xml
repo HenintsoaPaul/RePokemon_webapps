@@ -28,7 +28,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ModelCarteServlet</servlet-name>
-        <url-pattern>/infoModel</url-pattern>
+        <url-pattern>/infoModelAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModelCarteUpServlet</servlet-name>
+        <servlet-class>servlets.collection.ModelCarteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModelCarteUpServlet</servlet-name>
+        <url-pattern>/infoModelUp</url-pattern>
     </servlet-mapping>
     <!-- InfoModel -->
 
@@ -39,7 +48,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PokemonServlet</servlet-name>
-        <url-pattern>/infoPokemon</url-pattern>
+        <url-pattern>/infoPokemonAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PokemonUpServlet</servlet-name>
+        <servlet-class>servlets.collection.PokemonUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PokemonUpServlet</servlet-name>
+        <url-pattern>/infoPokemonUp</url-pattern>
     </servlet-mapping>
     <!-- InfoPokemon -->
 

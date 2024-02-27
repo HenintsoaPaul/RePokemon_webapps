@@ -62,7 +62,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="infoModel?action=2&idModel=<%= model.getIdModelCarte() %>">
+                        <form method="POST" action="infoModelUp?idModel=<%= model.getIdModelCarte() %>">
                             <div class="row">
                                 <h3 class="form-label">Update Model</h3>
 

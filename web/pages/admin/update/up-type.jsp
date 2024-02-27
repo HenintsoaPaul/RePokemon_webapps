@@ -52,7 +52,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="POST" action="types?action=2&idType=<%= type.getIdType() %>">
+                                <form method="POST" action="typesUp?idType=<%= type.getIdType() %>">
                                     <div class="row">
                                         <h3 class="form-label">Update Type</h3>
 

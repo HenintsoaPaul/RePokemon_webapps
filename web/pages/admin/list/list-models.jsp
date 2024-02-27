@@ -64,7 +64,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="infoModel?action=1">
+                        <form method="POST" action="infoModelAdd">
                             <div class="row">
                                 <h3 class="form-label">Add new Model</h3>
 

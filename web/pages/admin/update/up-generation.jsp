@@ -52,7 +52,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="POST" action="generations?action=2&idGeneration=<%= generation.getIdGeneration() %>">
+                                <form method="POST" action="generationsUp?idGeneration=<%= generation.getIdGeneration() %>">
                                     <div class="row">
                                         <h3 class="form-label">Update Generation</h3>
 

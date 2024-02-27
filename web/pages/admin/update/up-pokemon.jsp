@@ -56,7 +56,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="infoPokemon?action=2&idPokemon=<%= infoPokemon.getIdPokemon() %>">
+                        <form method="POST" action="infoPokemonUp?idPokemon=<%= infoPokemon.getIdPokemon() %>">
                             <div class="row">
                                 <h3 class="form-label">Update Pokemon</h3>
 

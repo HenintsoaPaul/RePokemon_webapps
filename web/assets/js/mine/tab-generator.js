@@ -214,7 +214,7 @@ function generateRowsInfoModel(tbody, data) {
                 <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemon?action=2&idPokemon=${item.idPokemon}">
+                <a href="infoPokemonAdd?action=2&idPokemon=${item.idPokemon}">
                     <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
                 </a>
             </td>
@@ -255,7 +255,7 @@ function generateRowsListInfoModel(tbody, data) {
                 <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemon?action=3&idPokemon=${item.idPokemon}">
+                <a href="infoPokemonUp?idPokemon=${item.idPokemon}">
                     <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
                 </a>
             </td>
@@ -277,7 +277,7 @@ function generateRowsListInfoModel(tbody, data) {
                 <h6 class="fw-bolder mb-0">${item.dateSortieModel}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoModel?action=3&idModel=${item.idModelCarte}">
+                <a href="infoModelUp?idModel=${item.idModelCarte}">
                     <span class="badge bg-secondary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>
@@ -332,7 +332,7 @@ function generateRowsListInfoPokemon(tbody, data) {
                 <p class="fw-bolder mb-0">${item.NomGeneration}</p>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemon?action=3&idPokemon=${item.idPokemon}">
+                <a href="infoPokemonUp?idPokemon=${item.idPokemon}">
                     <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>
@@ -400,7 +400,7 @@ function generateRowsListInfoType(tbody, data) {
                 <h6 class="fw-normal mb-0">${item.NomType}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="types?action=3&idType=${item.idType}">
+                <a href="typesUp?idType=${item.idType}">
                     <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>
@@ -443,7 +443,7 @@ function generateRowsListGeneration(tbody, data) {
                 <h6 class="fw-normal mb-0">${item.NomGeneration}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="generations?action=3&idGeneration=${item.idGeneration}">
+                <a href="generationsUp?idGeneration=${item.idGeneration}">
                     <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>
