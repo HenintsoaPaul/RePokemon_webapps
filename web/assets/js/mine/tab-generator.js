@@ -35,6 +35,12 @@ function generateTable(headers, data, dataType) {
         case "estimation" :
             generateRowsEstimation(tbody, data);
             break;
+        case "infoVente" :
+            generateRowsInfoTransaction(tbody, data);
+            break;
+        case "listVente" :
+            generateRowsListTransactions(tbody, data);
+            break;
         case "searchMine" :
             generateRowsSearchMine(tbody, data);
             break;
@@ -99,6 +105,80 @@ function generateRowsEstimation(tbody, data) {
             <td class="border-bottom-0">
                 <p class="mb-0 fw-bolder">${item.dateFabrication}</p>
                 </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsInfoTransaction(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idVente}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateVente}</p>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
+                <span class="mb-0 fw-normal"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomAcheteur}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomVendeur}</h6>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function generateRowsListTransactions(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idVente}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateVente}</p>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
+                <span class="mb-0 fw-normal"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomAcheteur}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomVendeur}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="vente?action=3&idVente=${item.idVente}">
+                        <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
+                    </a>
+                    <a href="vente?action=4&idVente=${item.idVente}">
+                        <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
+                    </a>
+                </div>
+            </td>
         `;
 
         // Ajouter la ligne à tbody
