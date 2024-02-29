@@ -3,37 +3,21 @@
 <%
     List<ModelCarte> models = ( List<ModelCarte> ) request.getAttribute( "models" );
 %>
-
-<div class="card">
-    <div class="card-body">
-        <section id="search-carte">
+<br>
+<br>
+<br>
+<section id="search-carte">
+    <div class="card">
+        <div class="card-body">
             <div class="card">
                 <div class="card-body">
 
                     <form method="POST" action="cartes">
                         <div class="row">
+                            <h1 class="form-label">Recherche de Carte</h1>
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-
-                                        <%-- Begining div Model --%>
-                                        <div class="mb-3">
-                                            <h3 class="form-label">Models Cartes</h3>
-                                            <div class="form-selectgroup form-selectgroup-pills">
-                                                <% for ( ModelCarte model : models ) { %>
-                                                <div>
-                                                    <label class="form-selectgroup-item">
-                                                        <input type="checkbox" name="idModelCarte"
-                                                               value="<%= model.getIdModelCarte() %>"
-                                                               class="form-selectgroup-input">
-                                                        <span class="form-selectgroup-label"><%= model.getNomModel() %></span>
-                                                    </label>
-                                                </div>
-                                                <% } %>
-                                            </div>
-                                        </div>
-                                        <%-- Ending div Model --%>
-
                                         <%-- Begining div Prix Models --%>
                                         <div class="mb-3">
                                             <h6 class="form-label">Prix du Proprietaire (en Ariary MG)</h6>
@@ -81,6 +65,30 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-lg-5 col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <%-- Begining div Model --%>
+                                        <div class="mb-3">
+                                            <h4 class="form-label">Models Cartes</h4>
+                                            <div class="form-selectgroup form-selectgroup-pills">
+                                                <% for ( ModelCarte model : models ) { %>
+                                                <div>
+                                                    <label class="form-selectgroup-item">
+                                                        <input type="checkbox" name="idModelCarte"
+                                                               value="<%= model.getIdModelCarte() %>"
+                                                               class="form-selectgroup-input">
+                                                        <span class="form-selectgroup-label"><%= model.getNomModel() %></span>
+                                                    </label>
+                                                </div>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                        <%-- Ending div Model --%>
+                                    </div>
+                                </div>
+                            </div>
                             <div>
                                 <button type="submit" class="btn btn-success">Search</button>
                             </div>
@@ -89,6 +97,6 @@
 
                 </div>
             </div>
-        </section>
+        </div>
     </div>
-</div>
+</section>

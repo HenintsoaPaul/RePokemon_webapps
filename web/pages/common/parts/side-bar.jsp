@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="cartes" aria-expanded="false">
+                        <a class="sidebar-link" href="cartes?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
                             <span class="hide-menu">Add Cartes</span>
                         </a>
@@ -104,6 +104,12 @@
                         <a class="sidebar-link" href="search" aria-expanded="false">
                             <span><i class="ti ti-backpack"></i></span>
                             <span class="hide-menu">Explorer, Rechercher, ...</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="cartes?action=2" aria-expanded="false">
+                            <span><i class="ti ti-backpack"></i></span>
+                            <span class="hide-menu">Recherche de Carte(s)</span>
                         </a>
                     </li>
 

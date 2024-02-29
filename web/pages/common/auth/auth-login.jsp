@@ -1,4 +1,4 @@
-<%@page import="entities.Status" %>
+<%@page import="entities.supp.Status" %>
 <%@page import="java.util.List" %>
 <%
     List<Status> statusList = (List<Status>) request.getAttribute("statusList");
