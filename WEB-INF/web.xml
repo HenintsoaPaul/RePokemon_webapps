@@ -154,6 +154,15 @@
         <servlet-name>CarteServlet</servlet-name>
         <url-pattern>/cartes</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CarteUpServlet</servlet-name>
+        <servlet-class>servlets.CarteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarteUpServlet</servlet-name>
+        <url-pattern>/cartesUp</url-pattern>
+    </servlet-mapping>
     <!-- Carte -->
 
 <!--  chart  -->

@@ -35,6 +35,9 @@ function generateTable(headers, data, dataType) {
         case "estimation" :
             generateRowsEstimation(tbody, data);
             break;
+        case "listInfoCarte" :
+            rowsListCarte(tbody, data);
+            break;
         case "infoVente" :
             generateRowsInfoTransaction(tbody, data);
             break;
@@ -105,6 +108,52 @@ function generateRowsEstimation(tbody, data) {
             <td class="border-bottom-0">
                 <p class="mb-0 fw-bolder">${item.dateFabrication}</p>
                 </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function rowsListCarte(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.NomModelCarte}</p>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.PrixProprio}</mark></span>
+                <span class="mb-0 fw-normal"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.PrixMarche}</mark></span>
+                <span class="mb-0 fw-normal"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateFabrication}</p>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateSortieModel}</p>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomUser}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="cartesUp?action=1&idCarte=${item.idCarte}">
+                        <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
+                    </a>
+                    <a href="cartesUp?action=2&idCarte=${item.idCarte}">
+                        <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
+                    </a>
+                </div>
+            </td>
         `;
 
         // Ajouter la ligne à tbody
