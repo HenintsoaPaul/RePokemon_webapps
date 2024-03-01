@@ -2,6 +2,20 @@
 <%@ page import="views.InfoModel" %>
 <%
     List<InfoModel> models = ( List<InfoModel> ) request.getAttribute( "models" );
+    String notification = "", notificationClass = "";
+    if ( request.getParameter( "delCode" ) != null ) {
+        int delCode = Integer.parseInt( request.getParameter( "delCode" ) );
+        switch ( delCode ) {
+            case 1:
+                notification = "Success!";
+                notificationClass = "alert alert-success";
+                break;
+            case 0:
+                notification = "Oops! Something wrong happened...";
+                notificationClass = "alert alert-danger";
+                break;
+        }
+    }
 %>
 <br>
 <br>
@@ -30,6 +44,17 @@
                     const table = generateTableTopContainer("Liste des Models", headers, data, "listInfoModel");
                     document.getElementById("list-info-models").appendChild(table);
                 </script>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-success m-1">
+                    <a href="modelsUp?action=3">
+                        Add new Carte
+                    </a>
+                </button>
+                <div class="<%= notificationClass %>" role="alert">
+                    <%= notification %>
+                </div>
             </div>
         </div>
     </div>
