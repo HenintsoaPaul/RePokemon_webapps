@@ -53,6 +53,7 @@
             </div>
         </div>
 
+        <%-- Form --%>
         <div class="col-lg-10">
             <div class="card-body">
                 <div class="card">
@@ -124,6 +125,6 @@
                 </div>
             </div>
         </div>
-
+        <%-- Form --%>
     </div>
 </section>
