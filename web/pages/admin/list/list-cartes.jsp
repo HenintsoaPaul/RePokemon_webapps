@@ -6,8 +6,8 @@
 <br>
 <br>
 <br>
-<div class="card">
-    <section id="list-cartes">
+<section id="list-cartes">
+    <div class="card">
         <div class="card-body">
             <div id="list-info-cartes">
                 <script>
@@ -38,5 +38,5 @@
                 </button>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>

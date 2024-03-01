@@ -8,7 +8,6 @@
 
     Carte carte = null;
     carte = ( Carte ) request.getAttribute( "carte" );
-
     String action = "cartesUp?action=1";
     if ( carte != null ) {
         action = "cartesUp?action=2&idCarte=" + carte.getIdCarte();

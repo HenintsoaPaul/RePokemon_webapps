@@ -406,8 +406,11 @@ function generateRowsListInfoModel(tbody, data) {
                 <h6 class="fw-bolder mb-0">${item.dateSortieModel}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="infoModelUp?idModel=${item.idModelCarte}">
+                <a href="modelsUp?action=1&idModel=${item.idModelCarte}">
                     <span class="badge bg-secondary rounded-3 fw-semibold">Modifier</span>
+                </a>
+                <a href="modelsUp?action=2&idModel=${item.idModelCarte}">
+                    <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
                 </a>
             </td>
         `;
