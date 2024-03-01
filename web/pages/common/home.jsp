@@ -16,7 +16,6 @@
     <script src="web/assets/js/sidebarmenu.js"></script>
     <script src="web/assets/js/app.min.js"></script>
     <script src="web/assets/libs/simplebar/dist/simplebar.js"></script>
-    <%--<script src="web/assets/js/dashboard.js"></script>--%>
     <script src="web/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 </head>
 

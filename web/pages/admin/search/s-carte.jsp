@@ -9,9 +9,9 @@
 <section id="search-carte">
     <div class="card">
         <div class="card-body">
+                <%-- Begining Search Form --%>
             <div class="card">
                 <div class="card-body">
-
                     <form method="POST" action="cartes">
                         <div class="row">
                             <h1 class="form-label">Recherche de Carte</h1>
@@ -26,14 +26,14 @@
                                                     <label for="minPrixProprio" class="form-label">
                                                         <input type="number" step="any" class="form-control"
                                                                id="minPrixProprio" name="minPrixProprio"
-                                                               placeholder="Minimum" value="0" required>
+                                                               value="0" required>
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-6 mb-12">
                                                     <label for="maxPrixProprio" class="form-label">
                                                         <input type="number" step="any" class="form-control"
                                                                id="maxPrixProprio" name="maxPrixProprio"
-                                                               placeholder="Maximum" value="9999999999" required>
+                                                               value="9999999999" required>
                                                     </label>
                                                 </div>
                                             </div>
@@ -94,9 +94,13 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
+                <%-- Ending Search Form --%>
+
+                <%-- Begining Search Result --%>
+            <jsp:include page="f-carte.jsp"/>
+                <%-- Ending Search Result --%>
         </div>
     </div>
 </section>

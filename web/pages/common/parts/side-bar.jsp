@@ -109,7 +109,7 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="cartes?action=2" aria-expanded="false">
                             <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche de Carte(s)</span>
+                            <span class="hide-menu">Recherche de Carte</span>
                         </a>
                     </li>
 
