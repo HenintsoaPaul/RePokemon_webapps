@@ -38,6 +38,9 @@ function generateTable(headers, data, dataType) {
         case "listInfoCarte" :
             rowsListCarte(tbody, data);
             break;
+        case "listSerie" :
+            rowsListSerie(tbody, data);
+            break;
         case "infoVente" :
             generateRowsInfoTransaction(tbody, data);
             break;
@@ -150,6 +153,45 @@ function rowsListCarte(tbody, data) {
                         <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
                     </a>
                     <a href="cartesUp?action=2&idCarte=${item.idCarte}">
+                        <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
+                    </a>
+                </div>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function rowsListSerie(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idSerie}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.NomSerie}</p>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.NbEpisode}</mark></span>
+                <span class="mb-0 fw-normal"> episodes</span>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateDebutSerie}</p>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateFinSerie}</p>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="seriesUp?action=1&idSerie=${item.idSerie}">
+                        <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
+                    </a>
+                    <a href="seriesUp?action=2&idSerie=${item.idSerie}">
                         <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
                     </a>
                 </div>
@@ -406,10 +448,10 @@ function generateRowsListInfoModel(tbody, data) {
                 <h6 class="fw-bolder mb-0">${item.dateSortieModel}</h6>
             </td>
             <td class="border-bottom-0">
-                <a href="modelsUp?action=1&idModel=${item.idModelCarte}">
+                <a href="modelsUp?action=1&idModelCarte=${item.idModelCarte}">
                     <span class="badge bg-secondary rounded-3 fw-semibold">Modifier</span>
                 </a>
-                <a href="modelsUp?action=2&idModel=${item.idModelCarte}">
+                <a href="modelsUp?action=2&idModelCarte=${item.idModelCarte}">
                     <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
                 </a>
             </td>

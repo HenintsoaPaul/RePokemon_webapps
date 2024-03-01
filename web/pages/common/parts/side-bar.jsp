@@ -42,6 +42,20 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="series?action=1" aria-expanded="false">
+                            <span><i class="ti ti-layout-dashboard"></i></span>
+                            <span class="hide-menu">Display Series</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="ventes?action=1" aria-expanded="false">
+                            <span><i class="ti ti-layout-dashboard"></i></span>
+                            <span class="hide-menu">Display Ventes</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="infoPokemonAdd?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
                             <span class="hide-menu">Add Pokemon</span>
