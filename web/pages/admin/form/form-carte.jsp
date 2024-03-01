@@ -11,7 +11,7 @@
 
     String action = "cartesUp?action=1";
     if ( carte != null ) {
-        action += "cartesUp?action=2&idCarte=" + carte.getIdCarte();
+        action = "cartesUp?action=2&idCarte=" + carte.getIdCarte();
     }
 
     String notification = "", notificationClass = "";
@@ -81,8 +81,8 @@
                                             <div class="card-body">
 
                                                 <div class="mb-3">
-                                                    <label for="idModel" class="form-label">Model</label>
-                                                    <select class="form-select" id="idModel" name="idModel"
+                                                    <label for="idModelCarte" class="form-label">Model</label>
+                                                    <select class="form-select" id="idModelCarte" name="idModelCarte"
                                                             required>
                                                         <option value="">Select a ModelCarte</option>
                                                         <% for ( ModelCarte model : models ) { %>

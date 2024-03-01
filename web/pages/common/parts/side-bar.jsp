@@ -30,14 +30,14 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="cartes?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Add Cartes</span>
+                            <span class="hide-menu">Display Cartes</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="infoModelAdd?action=1" aria-expanded="false">
+                        <a class="sidebar-link" href="models?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Add Model</span>
+                            <span class="hide-menu">Display Models</span>
                         </a>
                     </li>
 

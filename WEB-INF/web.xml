@@ -28,7 +28,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ModelCarteServlet</servlet-name>
-        <url-pattern>/infoModelAdd</url-pattern>
+        <url-pattern>/models</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -37,7 +37,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ModelCarteUpServlet</servlet-name>
-        <url-pattern>/infoModelUp</url-pattern>
+        <url-pattern>/modelsUp</url-pattern>
     </servlet-mapping>
     <!-- InfoModel -->
 
