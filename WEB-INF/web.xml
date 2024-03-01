@@ -21,10 +21,10 @@
     </servlet-mapping>
     <!-- Collection -->
 
-    <!-- InfoModel : Redirection(GET) -->
+    <!-- ModelCarte : Redirection(GET) -->
     <servlet>
         <servlet-name>ModelCarteServlet</servlet-name>
-        <servlet-class>servlets.collection.ModelCarteServlet</servlet-class>
+        <servlet-class>servlets.main.ModelCarteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ModelCarteServlet</servlet-name>
@@ -33,13 +33,33 @@
 
     <servlet>
         <servlet-name>ModelCarteUpServlet</servlet-name>
-        <servlet-class>servlets.collection.ModelCarteUpServlet</servlet-class>
+        <servlet-class>servlets.main.ModelCarteUpServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ModelCarteUpServlet</servlet-name>
         <url-pattern>/modelsUp</url-pattern>
     </servlet-mapping>
-    <!-- InfoModel -->
+    <!-- ModelCarte -->
+
+    <!-- Serie : Redirection(GET) -->
+    <servlet>
+        <servlet-name>SerieServlet</servlet-name>
+        <servlet-class>servlets.main.SerieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieServlet</servlet-name>
+        <url-pattern>/series</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <servlet-class>servlets.main.SerieUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <url-pattern>/seriesUp</url-pattern>
+    </servlet-mapping>
+    <!-- Serie -->
 
     <!-- InfoPokemon : Redirection(GET) -->
     <servlet>
@@ -148,7 +168,7 @@
     <!-- Carte : Redirection(GET) -->
     <servlet>
         <servlet-name>CarteServlet</servlet-name>
-        <servlet-class>servlets.CarteServlet</servlet-class>
+        <servlet-class>servlets.main.CarteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CarteServlet</servlet-name>
@@ -157,7 +177,7 @@
 
     <servlet>
         <servlet-name>CarteUpServlet</servlet-name>
-        <servlet-class>servlets.CarteUpServlet</servlet-class>
+        <servlet-class>servlets.main.CarteUpServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CarteUpServlet</servlet-name>
