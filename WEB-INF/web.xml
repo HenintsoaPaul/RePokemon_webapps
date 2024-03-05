@@ -76,11 +76,11 @@
     <!-- Vente -->
     <servlet>
         <servlet-name>VenteServlet</servlet-name>
-        <servlet-class>servlets.VenteServlet</servlet-class>
+        <servlet-class>servlets.main.VenteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>VenteServlet</servlet-name>
-        <url-pattern>/vente</url-pattern>
+        <url-pattern>/ventes</url-pattern>
     </servlet-mapping>
     <!-- Vente -->
     <!-- Main -->

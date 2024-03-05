@@ -38,6 +38,9 @@ function generateTable(headers, data, dataType) {
         case "listInfoCarte" :
             rowsListCarte(tbody, data);
             break;
+        case "listInfoVente" :
+            rowsListVente(tbody, data);
+            break;
         case "listSerie" :
             rowsListSerie(tbody, data);
             break;
@@ -192,6 +195,45 @@ function rowsListSerie(tbody, data) {
                         <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
                     </a>
                     <a href="seriesUp?action=2&idSerie=${item.idSerie}">
+                        <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
+                    </a>
+                </div>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function rowsListVente(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idVente}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-semibold mb-0">${item.DateVente}</p>
+            </td>
+            <td class="border-bottom-0">
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
+                <span class="mb-0 fw-normal"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomAcheteur}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.NomVendeur}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="cartesUp?action=1&idCarte=${item.idCarte}">
+                        <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
+                    </a>
+                    <a href="cartesUp?action=2&idCarte=${item.idCarte}">
                         <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
                     </a>
                 </div>

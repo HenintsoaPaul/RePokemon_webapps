@@ -2,7 +2,7 @@
 <%@ page import="views.InfoCarte" %>
 <%
     List<InfoCarte> cartes = ( List<InfoCarte> ) request.getAttribute( "cartes" );
-    String delMsg = "", delMsgClass = "";
+    String notification = "", notificationClass = "";
     if ( request.getParameter( "delCode" ) != null ) {
         int delCode = Integer.parseInt( request.getParameter( "delCode" ) );
         switch ( delCode ) {
@@ -50,8 +50,8 @@
                         Add new Carte
                     </a>
                 </button>
-                <div class="<%= delMsgClass %>" role="alert">
-                    <%= delMsg %>
+                <div class="<%= notificationClass %>" role="alert">
+                    <%= notification %>
                 </div>
             </div>
         </div>
