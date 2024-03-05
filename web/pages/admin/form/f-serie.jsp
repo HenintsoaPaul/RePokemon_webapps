@@ -57,6 +57,13 @@
                                                    if ( serie != null ) out.print( serie.getNbEpisode() );
                                                    %>" required>
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="synopsys" class="form-label">Synopsys</label>
+                                                <textarea name="synopsys" id="synopsys" class="form-control"
+                                                          required><%
+                                                    if ( serie != null ) out.print( serie.getSynopsys() );
+                                                %></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

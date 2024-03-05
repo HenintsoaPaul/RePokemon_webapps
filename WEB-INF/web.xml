@@ -81,16 +81,25 @@
     </servlet-mapping>
     <!-- InfoPokemon -->
 
-    <!-- InfoSerie : Redirection(GET) -->
+    <!-- Serie : Redirection(GET) -->
     <servlet>
         <servlet-name>SerieServlet</servlet-name>
-        <servlet-class>servlets.collection.SerieServlet</servlet-class>
+        <servlet-class>servlets.main.SerieServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SerieServlet</servlet-name>
-        <url-pattern>/infoSerie</url-pattern>
+        <url-pattern>/series</url-pattern>
     </servlet-mapping>
-    <!-- InfoSerie -->
+
+    <servlet>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <servlet-class>servlets.main.SerieUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <url-pattern>/seriesUp</url-pattern>
+    </servlet-mapping>
+    <!-- Serie -->
 
     <!-- Vente : Redirection(GET) -->
     <servlet>

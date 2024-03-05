@@ -26,35 +26,35 @@
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">ENTITIES</span>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="cartes?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Display Cartes</span>
+                            <span class="hide-menu">Cartes</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="models?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Display Models</span>
+                            <span class="hide-menu">Models</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="series?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Display Series</span>
+                            <span class="hide-menu">Series</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="ventes?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Display Ventes</span>
+                            <span class="hide-menu">Ventes</span>
                         </a>
                     </li>
 
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">SUPP</span>
+                    </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="infoPokemonAdd?action=1" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
@@ -123,7 +123,25 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="cartes?action=2" aria-expanded="false">
                             <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche de Carte</span>
+                            <span class="hide-menu">Recherche Carte</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="models?action=2" aria-expanded="false">
+                            <span><i class="ti ti-backpack"></i></span>
+                            <span class="hide-menu">Recherche Model</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="series?action=2" aria-expanded="false">
+                            <span><i class="ti ti-backpack"></i></span>
+                            <span class="hide-menu">Recherche Serie</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="ventes?action=2" aria-expanded="false">
+                            <span><i class="ti ti-backpack"></i></span>
+                            <span class="hide-menu">Recherche Vente</span>
                         </a>
                     </li>
 
