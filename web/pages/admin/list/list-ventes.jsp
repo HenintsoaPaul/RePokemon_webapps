@@ -30,10 +30,10 @@
                         <% for ( InfoVente vente : ventes ) { %>
                         {
                             idVente: <%= vente.getIdVente() %>,
-                            DateVente: '<%= vente.getMontantVente() %>',
-                            MontantVente: <%= vente.getDateVente() %>,
+                            DateVente: '<%= vente.getDateVente() %>',
+                            MontantVente: <%= vente.getMontantVente() %>,
                             idCarte: <%= vente.getIdCarte() %>,
-                            NomAcheteur: '<%= vente.getNomAcheur() %>',
+                            NomAcheteur: '<%= vente.getNomAcheteur() %>',
                             NomVendeur: '<%= vente.getNomVendeur() %>'
                         },
                         <% } %>

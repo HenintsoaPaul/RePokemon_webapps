@@ -223,6 +223,9 @@ function rowsListVente(tbody, data) {
                 <span class="mb-0 fw-normal"> Ariary MG</span>
             </td>
             <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
                 <h6 class="fw-semibold mb-0">${item.NomAcheteur}</h6>
             </td>
             <td class="border-bottom-0">
