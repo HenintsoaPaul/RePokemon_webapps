@@ -19,11 +19,6 @@
         }
     }
 %>
-<script>
-    const cartes = <%= matchingCartes %>;
-    console.log(cartes);
-    console.log(JSON.parse(cartes))
-</script>
 <section id="found-carte">
     <% if ( nbCartesFound != 0 ) { %>
     <div class="row">

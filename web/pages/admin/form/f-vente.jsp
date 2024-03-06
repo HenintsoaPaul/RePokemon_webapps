@@ -3,7 +3,7 @@
 <%@ page import="entities.Carte" %>
 <%@ page import="entities.supp.User" %>
 <%
-    List<Carte> models = ( List<Carte> ) request.getAttribute( "cartes" );
+    List<Carte> cartes = ( List<Carte> ) request.getAttribute( "cartes" );
     List<User> users = ( List<User> ) request.getAttribute( "users" );
 
     Vente vente = null;
@@ -53,7 +53,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="mb-3">
-                                                    <label for="montantVente" class="form-label">Montant Vente</label>
+                                                    <label for="montantVente" class="form-label">Montant Vente (en Ariary)</label>
                                                     <input type="number" step="any" class="form-control"
                                                            id="montantVente" name="montantVente" value="<%
                                                                 if ( vente != null ) out.print( vente.getMontantVente() );
@@ -77,7 +77,7 @@
                                             <div class="card-body">
 
                                                 <div class="mb-3">
-                                                    <label for="idCarte" class="form-label"></label>
+                                                    <label for="idCarte" class="form-label">Id Carte</label>
                                                     <select class="form-select" id="idCarte" name="idCarte"
                                                             required>
                                                         <option value="">Select a Carte</option>
@@ -100,7 +100,7 @@
                                                         <% for ( User user : users ) { %>
                                                         <option value="<%= user.getIdUser() %>" <%
                                                             if ( vente != null ) {
-                                                                if ( vente.getIdUser() == user.getIdUser() )
+                                                                if ( vente.getIdUser_acheteur() == user.getIdUser() )
                                                                     out.print( "selected" );
                                                             }
                                                         %> ><%= user.getNomUser() %>
@@ -116,7 +116,7 @@
                                                         <% for ( User user : users ) { %>
                                                         <option value="<%= user.getIdUser() %>" <%
                                                             if ( vente != null ) {
-                                                                if ( vente.getIdUser() == user.getIdUser() )
+                                                                if ( vente.getIdUser_vendeur() == user.getIdUser() )
                                                                     out.print( "selected" );
                                                             }
                                                         %> ><%= user.getNomUser() %>

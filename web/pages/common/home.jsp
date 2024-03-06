@@ -26,7 +26,7 @@
     <jsp:include page='parts/side-bar.jsp'/>
 
     <div class="body-wrapper">
-<%--        <jsp:include page='parts/header.jsp'/>--%>
+        <jsp:include page='parts/header.jsp'/>
 
         <jsp:include page='<%= request.getParameter("content") %>'/>
     </div>
