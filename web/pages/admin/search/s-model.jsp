@@ -68,62 +68,74 @@
 
                                     </div>
                                 </div>
+
+
                             </div>
 
-                            <div class="col-lg-5 col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <%-- Begining div Pokemon --%>
-                                        <div class="mb-3">
-                                            <h4 class="form-label">Pokemons</h4>
-                                            <div class="form-selectgroup form-selectgroup-pills">
-                                                <% for ( Pokemon pokemon : pokemons ) { %>
-                                                <div>
-                                                    <label class="form-selectgroup-item">
-                                                        <input type="checkbox" name="idPokemon"
-                                                               value="<%= pokemon.getIdPokemon() %>"
-                                                               class="form-selectgroup-input">
-                                                        <span class="form-selectgroup-label"><%= pokemon.getNomPokemon() %></span>
-                                                    </label>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <%-- Begining div Rang --%>
+                                                <div class="mb-3">
+                                                    <h4 class="form-label">Rangs</h4>
+                                                    <div class="form-selectgroup form-selectgroup-pills">
+                                                        <% for ( Rang rang : rangs ) { %>
+                                                        <div>
+                                                            <label class="form-selectgroup-item">
+                                                                <input type="checkbox" name="idRang"
+                                                                       value="<%= rang.getIdRang() %>"
+                                                                       class="form-selectgroup-input">
+                                                                <span class="form-selectgroup-label"><%= rang.getNomRang() %></span>
+                                                            </label>
+                                                        </div>
+                                                        <% } %>
+                                                    </div>
                                                 </div>
-                                                <% } %>
+                                                <%-- Ending div Rang --%>
                                             </div>
                                         </div>
-                                        <%-- Ending div Pokemon --%>
-                                        <%-- Begining div Rang --%>
-                                        <div class="mb-3">
-                                            <h4 class="form-label">Rangs</h4>
-                                            <div class="form-selectgroup form-selectgroup-pills">
-                                                <% for ( Rang rang : rangs ) { %>
-                                                <div>
-                                                    <label class="form-selectgroup-item">
-                                                        <input type="checkbox" name="idRang"
-                                                               value="<%= rang.getIdRang() %>"
-                                                               class="form-selectgroup-input">
-                                                        <span class="form-selectgroup-label"><%= rang.getNomRang() %></span>
-                                                    </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <%-- Begining div Pokemon --%>
+                                                <div class="mb-3">
+                                                    <h4 class="form-label">Pokemons</h4>
+                                                    <div class="form-selectgroup form-selectgroup-pills">
+                                                        <% for ( Pokemon pokemon : pokemons ) { %>
+                                                        <div>
+                                                            <label class="form-selectgroup-item">
+                                                                <input type="checkbox" name="idPokemon"
+                                                                       value="<%= pokemon.getIdPokemon() %>"
+                                                                       class="form-selectgroup-input">
+                                                                <span class="form-selectgroup-label"><%= pokemon.getNomPokemon() %></span>
+                                                            </label>
+                                                        </div>
+                                                        <% } %>
+                                                    </div>
                                                 </div>
-                                                <% } %>
+                                                <%-- Ending div Pokemon --%>
+                                                <%-- Begining div Rang --%>
+                                                <div class="mb-3">
+                                                    <h4 class="form-label">Series</h4>
+                                                    <div class="form-selectgroup form-selectgroup-pills">
+                                                        <% for ( Serie serie : series ) { %>
+                                                        <div>
+                                                            <label class="form-selectgroup-item">
+                                                                <input type="checkbox" name="idSerie"
+                                                                       value="<%= serie.getIdSerie() %>"
+                                                                       class="form-selectgroup-input">
+                                                                <span class="form-selectgroup-label"><%= serie.getNomSerie() %></span>
+                                                            </label>
+                                                        </div>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                <%-- Ending div Rang --%>
                                             </div>
                                         </div>
-                                        <%-- Ending div Rang --%>
-                                        <%-- Begining div Rang --%>
-                                        <div class="mb-3">
-                                            <h4 class="form-label">Series</h4>
-                                            <div class="form-selectgroup form-selectgroup-pills">
-                                                <% for ( Serie serie : series ) { %>
-                                                <div>
-                                                    <label class="form-selectgroup-item">
-                                                        <input type="checkbox" name="idSerie"
-                                                               value="<%= serie.getIdSerie() %>"
-                                                               class="form-selectgroup-input">
-                                                        <span class="form-selectgroup-label"><%= serie.getNomSerie() %></span>
-                                                    </label>
-                                                </div>
-                                                <% } %>
-                                            </div>
-                                        </div>
-                                        <%-- Ending div Rang --%>
                                     </div>
                                 </div>
                             </div>

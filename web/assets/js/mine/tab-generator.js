@@ -33,7 +33,7 @@ function generateTable(headers, data, dataType) {
     // Ajouter les données
     switch (dataType) {
         case "estimation" :
-            generateRowsEstimation(tbody, data);
+            rowsEstimation(tbody, data);
             break;
         case "listInfoCarte" :
             rowsListCarte(tbody, data);
@@ -45,43 +45,46 @@ function generateTable(headers, data, dataType) {
             rowsListSerie(tbody, data);
             break;
         case "infoVente" :
-            generateRowsInfoTransaction(tbody, data);
+            rowsInfoTransaction(tbody, data);
             break;
         case "listVente" :
-            generateRowsListTransactions(tbody, data);
+            rowsListTransactions(tbody, data);
             break;
         case "searchMine" :
-            generateRowsSearchMine(tbody, data);
+            rowsSearchMine(tbody, data);
+            break;
+        case "searchModels" :
+            rowsSearchModels(tbody, data);
             break;
         case "searchOthers" :
-            generateRowsSearchOthers(tbody, data);
+            rowsSearchOthers(tbody, data);
             break;
         case "infoModel" :
-            generateRowsInfoModel(tbody, data);
+            rowsInfoModel(tbody, data);
             break;
         case "listInfoModel" :
-            generateRowsListInfoModel(tbody, data);
+            rowsListInfoModel(tbody, data);
             break;
         case "infoType" :
-            generateRowsInfoType(tbody, data);
+            rowsInfoType(tbody, data);
             break;
         case "listInfoType" :
-            generateRowsListInfoType(tbody, data);
+            rowsListInfoType(tbody, data);
             break;
         case "generation" :
-            generateRowsGeneration(tbody, data);
+            rowsGeneration(tbody, data);
             break;
         case "listGeneration" :
-            generateRowsListGeneration(tbody, data);
+            rowsListGeneration(tbody, data);
             break;
         case "infoPokemon" :
-            generateRowsInfoPokemon(tbody, data);
+            rowsInfoPokemon(tbody, data);
             break;
         case "listInfoPokemon" :
-            generateRowsListInfoPokemon(tbody, data);
+            rowsListInfoPokemon(tbody, data);
             break;
         case "infoSerie" :
-            generateRowsInfoSerie(tbody, data);
+            rowsInfoSerie(tbody, data);
             break;
     }
 
@@ -93,7 +96,7 @@ function generateTable(headers, data, dataType) {
 
 
 // ROWS
-function generateRowsEstimation(tbody, data) {
+function rowsEstimation(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -248,7 +251,7 @@ function rowsListVente(tbody, data) {
     });
 }
 
-function generateRowsInfoTransaction(tbody, data) {
+function rowsInfoTransaction(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -280,7 +283,7 @@ function generateRowsInfoTransaction(tbody, data) {
     });
 }
 
-function generateRowsListTransactions(tbody, data) {
+function rowsListTransactions(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -322,7 +325,7 @@ function generateRowsListTransactions(tbody, data) {
     });
 }
 
-function generateRowsSearchMine(tbody, data) {
+function rowsSearchMine(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -371,7 +374,52 @@ function generateRowsSearchMine(tbody, data) {
     });
 }
 
-function generateRowsSearchOthers(tbody, data) {
+function rowsSearchModels(tbody, data) {
+    data.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Ajouter les données de chaque colonne
+        row.innerHTML = `
+            <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">${item.idModelCarte}</h6>
+            </td>
+            <td class="border-bottom-0">
+                <a href="models?action=1&idModelCarte=${item.idModelCarte}">
+                    <h6 class="fw-semibold mb-0">${item.NomModelCarte}</h6>
+                </a>
+            </td>
+            <td class="border-bottom-0">
+                <span class="mb-0 fs-4 fw-semibold">
+                    <mark>${item.PrixMarche}</mark>
+                </span>
+                <span class="fw-normal mb-0"> Ariary MG</span>
+            </td>
+            <td class="border-bottom-0">
+                <p class="fw-bolder mb-0">${item.DateSortieModel}</p>
+            </td>
+            <td class="border-bottom-0">
+                <a href="pokemons?idPokemon=${item.idPokemon}">
+                    <h6 class="fw-semibold mb-0">${item.NomPokemon}</h6>
+                </a>
+            </td>
+            <td class="border-bottom-0">
+                <span class="badge bg-danger rounded-3 fw-semibold">
+                    <h6 class="fw-semibold mb-0">${item.NomRang}</h6>
+                </span>
+            </td>
+            <td class="border-bottom-0">
+                <a href="series?idSerie=${item.idSerie}">
+                    <h6 class="fw-semibold mb-0">${item.NomSerie}</h6>
+                </a>
+            </td>
+        `;
+
+        // Ajouter la ligne à tbody
+        tbody.appendChild(row);
+    });
+}
+
+function rowsSearchOthers(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -417,7 +465,7 @@ function generateRowsSearchOthers(tbody, data) {
     });
 }
 
-function generateRowsInfoModel(tbody, data) {
+function rowsInfoModel(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -458,7 +506,7 @@ function generateRowsInfoModel(tbody, data) {
     });
 }
 
-function generateRowsListInfoModel(tbody, data) {
+function rowsListInfoModel(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -507,7 +555,7 @@ function generateRowsListInfoModel(tbody, data) {
     });
 }
 
-function generateRowsInfoPokemon(tbody, data) {
+function rowsInfoPokemon(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -532,7 +580,7 @@ function generateRowsInfoPokemon(tbody, data) {
     });
 }
 
-function generateRowsListInfoPokemon(tbody, data) {
+function rowsListInfoPokemon(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -562,7 +610,7 @@ function generateRowsListInfoPokemon(tbody, data) {
     });
 }
 
-function generateRowsInfoSerie(tbody, data) {
+function rowsInfoSerie(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -587,7 +635,7 @@ function generateRowsInfoSerie(tbody, data) {
     });
 }
 
-function generateRowsInfoType(tbody, data) {
+function rowsInfoType(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -606,7 +654,7 @@ function generateRowsInfoType(tbody, data) {
     });
 }
 
-function generateRowsListInfoType(tbody, data) {
+function rowsListInfoType(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -630,7 +678,7 @@ function generateRowsListInfoType(tbody, data) {
     });
 }
 
-function generateRowsGeneration(tbody, data) {
+function rowsGeneration(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -649,7 +697,7 @@ function generateRowsGeneration(tbody, data) {
     });
 }
 
-function generateRowsListGeneration(tbody, data) {
+function rowsListGeneration(tbody, data) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
