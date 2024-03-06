@@ -82,6 +82,15 @@
         <servlet-name>VenteServlet</servlet-name>
         <url-pattern>/ventes</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VenteUpServlet</servlet-name>
+        <servlet-class>servlets.main.VenteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteUpServlet</servlet-name>
+        <url-pattern>/ventesUp</url-pattern>
+    </servlet-mapping>
     <!-- Vente -->
     <!-- Main -->
 
