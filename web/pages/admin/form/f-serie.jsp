@@ -1,10 +1,10 @@
 <%@ page import="entities.Serie" %>
 <%
     Serie serie = null;
-    serie = ( ModelCarte ) request.getAttribute( "serie" );
+    serie = ( Serie ) request.getAttribute( "serie" );
     String action = "seriesUp?action=1";
     if ( serie != null ) {
-        action = "seriesUp?action=2&idSerie=" + serie.getIdModelCarte();
+        action = "seriesUp?action=2&idSerie=" + serie.getIdSerie();
     }
 
     String notification = "", notificationClass = "";
@@ -35,7 +35,6 @@
             <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body">
-
                         <form method="POST" action="<%= action %>">
                             <div class="row">
                                 <h3 class="form-label">Informations about the Serie</h3>
@@ -83,7 +82,7 @@
                                                 <input type="date" class="form-control" id="dateFinSerie"
                                                        name="dateFinSerie" value="<%
                                                    if ( serie != null ) out.print( serie.getDateFinSerie() );
-                                                   %>" required>
+                                                   %>">
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +98,6 @@
                                 <%= notification %>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
