@@ -1,5 +1,6 @@
 <web-app>
-    <!-- LogIn : Redirection(GET) and Validation(POST) -->
+    <!-- Authentication -->
+    <!-- LogIn -->
     <servlet>
         <servlet-name>UserAuthenticatorServlet</servlet-name>
         <servlet-class>servlets.auth.UserAuthenticatorServlet</servlet-class>
@@ -9,8 +10,91 @@
         <url-pattern>/userAuthf</url-pattern>
     </servlet-mapping>
     <!-- LogIn -->
+    <!-- Authentication -->
 
-    <!-- Collection : Redirection+Jetter(GET) -->
+    <!-- Main -->
+    <!-- Carte -->
+    <servlet>
+        <servlet-name>CarteServlet</servlet-name>
+        <servlet-class>servlets.main.CarteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarteServlet</servlet-name>
+        <url-pattern>/cartes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CarteUpServlet</servlet-name>
+        <servlet-class>servlets.main.CarteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarteUpServlet</servlet-name>
+        <url-pattern>/cartesUp</url-pattern>
+    </servlet-mapping>
+    <!-- Carte -->
+
+    <!-- ModelCarte -->
+    <servlet>
+        <servlet-name>ModelCarteServlet</servlet-name>
+        <servlet-class>servlets.main.ModelCarteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModelCarteServlet</servlet-name>
+        <url-pattern>/models</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModelCarteUpServlet</servlet-name>
+        <servlet-class>servlets.main.ModelCarteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModelCarteUpServlet</servlet-name>
+        <url-pattern>/modelsUp</url-pattern>
+    </servlet-mapping>
+    <!-- ModelCarte -->
+
+    <!-- Serie -->
+    <servlet>
+        <servlet-name>SerieServlet</servlet-name>
+        <servlet-class>servlets.main.SerieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieServlet</servlet-name>
+        <url-pattern>/series</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <servlet-class>servlets.main.SerieUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SerieUpServlet</servlet-name>
+        <url-pattern>/seriesUp</url-pattern>
+    </servlet-mapping>
+    <!-- Serie -->
+
+    <!-- Vente -->
+    <servlet>
+        <servlet-name>VenteServlet</servlet-name>
+        <servlet-class>servlets.main.VenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteServlet</servlet-name>
+        <url-pattern>/ventes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VenteUpServlet</servlet-name>
+        <servlet-class>servlets.main.VenteUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteUpServlet</servlet-name>
+        <url-pattern>/ventesUp</url-pattern>
+    </servlet-mapping>
+    <!-- Vente -->
+    <!-- Main -->
+
+    <!-- Collection -->
     <servlet>
         <servlet-name>CollectionServlet</servlet-name>
         <servlet-class>servlets.collection.CollectionServlet</servlet-class>
@@ -21,51 +105,69 @@
     </servlet-mapping>
     <!-- Collection -->
 
-    <!-- InfoModel : Redirection(GET) -->
-    <servlet>
-        <servlet-name>ModelCarteServlet</servlet-name>
-        <servlet-class>servlets.collection.ModelCarteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ModelCarteServlet</servlet-name>
-        <url-pattern>/infoModel</url-pattern>
-    </servlet-mapping>
-    <!-- InfoModel -->
-
-    <!-- InfoPokemon : Redirection(GET) -->
+    <!-- SUPP -->
+    <!-- InfoPokemon -->
     <servlet>
         <servlet-name>PokemonServlet</servlet-name>
         <servlet-class>servlets.collection.PokemonServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PokemonServlet</servlet-name>
-        <url-pattern>/infoPokemon</url-pattern>
+        <url-pattern>/infoPokemonAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PokemonUpServlet</servlet-name>
+        <servlet-class>servlets.collection.PokemonUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PokemonUpServlet</servlet-name>
+        <url-pattern>/infoPokemonUp</url-pattern>
     </servlet-mapping>
     <!-- InfoPokemon -->
 
-    <!-- InfoSerie : Redirection(GET) -->
+    <!-- Type -->
     <servlet>
-        <servlet-name>SerieServlet</servlet-name>
-        <servlet-class>servlets.collection.SerieServlet</servlet-class>
+        <servlet-name>TypeServlet</servlet-name>
+        <servlet-class>servlets.TypeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SerieServlet</servlet-name>
-        <url-pattern>/infoSerie</url-pattern>
+        <servlet-name>TypeServlet</servlet-name>
+        <url-pattern>/typesAdd</url-pattern>
     </servlet-mapping>
-    <!-- InfoSerie -->
 
-    <!-- Vente : Redirection(GET) -->
     <servlet>
-        <servlet-name>VenteServlet</servlet-name>
-        <servlet-class>servlets.VenteServlet</servlet-class>
+        <servlet-name>TypeUpServlet</servlet-name>
+        <servlet-class>servlets.TypeUpServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>VenteServlet</servlet-name>
-        <url-pattern>/vente</url-pattern>
+        <servlet-name>TypeUpServlet</servlet-name>
+        <url-pattern>/typesUp</url-pattern>
     </servlet-mapping>
-    <!-- Vente -->
+    <!-- Type -->
 
-    <!-- Search : Redirection(GET) -->
+    <!-- Generation -->
+    <servlet>
+        <servlet-name>GenerationServlet</servlet-name>
+        <servlet-class>servlets.GenerationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerationServlet</servlet-name>
+        <url-pattern>/generationsAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GenerationUpServlet</servlet-name>
+        <servlet-class>servlets.GenerationUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerationUpServlet</servlet-name>
+        <url-pattern>/generationsUp</url-pattern>
+    </servlet-mapping>
+    <!-- Generation -->
+    <!-- SUPP -->
+
+    <!-- Search -->
     <servlet>
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>servlets.SearchServlet</servlet-class>
@@ -76,7 +178,8 @@
     </servlet-mapping>
     <!-- Search -->
 
-    <!-- Search : Redirection(GET) -->
+    <!-- OTHERS -->
+    <!-- HomeRouter -->
     <servlet>
         <servlet-name>HomeRouterServlet</servlet-name>
         <servlet-class>servlets.HomeRouterServlet</servlet-class>
@@ -85,5 +188,17 @@
         <servlet-name>HomeRouterServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
-    <!-- Search -->
+    <!-- HomeRouter -->
+
+    <!-- BilanVente -->
+    <servlet>
+        <servlet-name>BilanVenteServlet</servlet-name>
+        <servlet-class>servlets.chart.BilanVenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BilanVenteServlet</servlet-name>
+        <url-pattern>/bilan</url-pattern>
+    </servlet-mapping>
+    <!-- BilanVente -->
+    <!-- OTHERS -->
 </web-app>

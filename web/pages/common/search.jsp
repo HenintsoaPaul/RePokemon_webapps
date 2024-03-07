@@ -25,13 +25,17 @@
     }
 %>
 <section id="search-user">
-    <h2>tss dikany</h2>
+    <br>
+    <br>
+    <br>
 
     <div class="card">
         <div class="card-body">
 
+            <%-- Begining Search Form --%>
             <div class="card">
                 <div class="card-body">
+
                     <form method="POST" action="search">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
@@ -130,8 +134,10 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
+            <%-- Ending Search Form --%>
 
             <% if ( nbCartesFound != 0 ) { %>
             <div id="matchingCartes">
@@ -143,153 +149,50 @@
                                 <%
                                     if ( mine != null ) {
                                 %>
-                                <h5 class="card-title fw-semibold mb-4">Mes Cartes</h5>
-                                <div class="table-responsive">
-
-                                    <table class="table text-nowrap mb-0 align-middle">
-                                        <thead class="text-dark fs-4">
-                                        <tr>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Id</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Nom Model</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Estimation Personnelle</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Prix sur le Marche</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Date Fabrication</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Actions</h6>
-                                            </th>
-                                        </tr>
-                                        </thead>
-
-                                        <tbody>
-                                        <% for ( InfoCarte carte : mine ) { %>
-                                        <tr>
-                                            <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0"><%= carte.getIdCarte() %>
-                                                </h6>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <a href="infoModel?action=1&idModelCarte=<%= carte.getIdModelCarte() %>">
-                                                    <h6 class="fw-semibold mb-0"><%= carte.getNomModelCarte() %>
-                                                    </h6>
-                                                </a>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <span class="fw-semibold mb-0 fs-4"><mark><%= carte.getPrixProprio() %></mark></span>
-                                                <span class="mb-0 fw-normal">Ariary MG</span>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <span class="fw-semibold mb-0 fs-4"><mark><%= carte.getPrixMarche() %></mark></span>
-                                                <span class="mb-0 fw-normal">Ariary MG</span>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-bolder"><%= carte.getDateFabrication() %>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <a href="mesCartes?action=3&idCarte=<%= carte.getIdCarte() %>">
-                                                        <span class="badge bg-success rounded-3 fw-semibold">Estimer</span>
-                                                    </a>
-                                                    <a href="mesCartes?action=2&idCarte=<%= carte.getIdCarte() %>">
-                                                        <span class="badge bg-danger rounded-3 fw-semibold">Jetter</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <% } %>
-                                        </tbody>
-                                    </table>
-
+                                <div id="founded-mine">
+                                    <script>
+                                        const headers = ['Id', 'Nom Model', 'Estimation Personnelle', 'Prix sur le Marche', 'Date de Fabrication', 'Date Sortie du Model', 'Actions'];
+                                        const data = [
+                                            <% for ( InfoCarte carte : mine ) { %>
+                                            {
+                                                idCarte: <%= carte.getIdCarte() %>,
+                                                idModelCarte: <%= carte.getIdModelCarte() %>,
+                                                NomModelCarte: '<%= carte.getNomModelCarte() %>',
+                                                PrixProprio: <%= carte.getPrixProprio() %>,
+                                                PrixMarche: <%= carte.getPrixMarche() %>,
+                                                DateFabrication: '<%= carte.getDateFabrication() %>',
+                                                DateSortieModel: '<%= carte.getDateSortieModel() %>'
+                                            },
+                                            <% } %>
+                                        ];
+                                        const table = generateTableMidContainer("Mes Cartes", headers, data, "searchMine");
+                                        document.getElementById("founded-mine").appendChild(table);
+                                    </script>
                                 </div>
-<%--                                <div id="founded-mine"></div>--%>
-<%--                                <script>--%>
-<%--                                    const headers = ['Id', 'Nom Model', 'Estimation Personnelle', 'Prix sur le Marche', 'Date de Fabrication', 'Actions'];--%>
-<%--                                    // add data--%>
-<%--                                    const midContainer = generateTableMidContainer(headers, data);--%>
-<%--                                    document.getElementById("founded-mine").appendChild(midContainer);--%>
-<%--                                </script>--%>
+
                                 <%
-                                    }
-                                    if ( others != null ) {
+                                    } if ( others != null ) {
                                 %>
-<%--                                <div id="founded-others"></div>--%>
-<%--                                <script>--%>
-<%--                                    --%>
-<%--                                </script>--%>
-                                <h5 class="card-title fw-semibold mb-4">Autres</h5>
-                                <div class="table-responsive">
-
-                                    <table class="table text-nowrap mb-0 align-middle">
-                                        <thead class="text-dark fs-4">
-                                        <tr>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Id</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Nom Model</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Estimation Personnelle</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Prix sur le Marche</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Date Fabrication</h6>
-                                            </th>
-                                            <th class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">Proprietaire</h6>
-                                            </th>
-                                        </tr>
-                                        </thead>
-
-                                        <tbody>
-                                        <% for ( InfoCarte carte : others ) { %>
-                                        <tr>
-                                            <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0"><%= carte.getIdCarte() %>
-                                                </h6>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <a href="infoModel?action=1&idModelCarte=<%= carte.getIdModelCarte() %>">
-                                                    <h6 class="fw-semibold mb-0"><%= carte.getNomModelCarte() %>
-                                                    </h6>
-                                                </a>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <span class="fw-semibold mb-0 fs-4"><mark><%= carte.getPrixProprio() %></mark></span>
-                                                <span class="mb-0 fw-normal">Ariary MG</span>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <span class="fw-semibold mb-0 fs-4"><mark><%= carte.getPrixMarche() %></mark></span>
-                                                <span class="mb-0 fw-normal">Ariary MG</span>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-bolder"><%= carte.getDateFabrication() %>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <span class="fw-semibold">
-                                                        <mark><%= carte.getNomUser() %></mark>
-                                                    </span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <% } %>
-                                        </tbody>
-                                    </table>
-
+                                <div id="founded-others">
+                                    <script>
+                                        const headers2 = ['Id', 'Nom Model', 'Estimation Personnelle', 'Prix sur le Marche', 'Date de Fabrication', 'Date Sortie du Model', 'Proprietaire'];
+                                        const data2 = [
+                                            <% for ( InfoCarte carte : others ) { %>
+                                            {
+                                                idCarte: <%= carte.getIdCarte() %>,
+                                                idModelCarte: <%= carte.getIdModelCarte() %>,
+                                                NomModelCarte: '<%= carte.getNomModelCarte() %>',
+                                                PrixProprio: <%= carte.getPrixProprio() %>,
+                                                PrixMarche: <%= carte.getPrixMarche() %>,
+                                                DateFabrication: '<%= carte.getDateFabrication() %>',
+                                                DateSortieModel: '<%= carte.getDateSortieModel() %>',
+                                                NomUser: '<%= carte.getNomUser() %>'
+                                            },
+                                            <% } %>
+                                        ];
+                                        const table2 = generateTableMidContainer("Autres", headers2, data2, "searchOthers");
+                                        document.getElementById("founded-others").appendChild(table2);
+                                    </script>
                                 </div>
                                 <% } %>
 
@@ -299,6 +202,7 @@
                 </div>
             </div>
             <% } %>
+
         </div>
     </div>
 

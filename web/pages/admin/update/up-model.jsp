@@ -35,7 +35,7 @@
 
     <div class="card">
         <div class="card-body">
-            <div id="info-models">
+            <div id="infoModel">
                 <script>
                     const headers = ['Id', 'Model', 'Pokemon', 'Rang', 'Serie', 'Prix sur le Marche', 'Date Sortie du Model'];
                     const data = [
@@ -52,7 +52,7 @@
                         }
                     ];
                     const table = generateTableTopContainer("Informations Model", headers, data, "infoModel");
-                    document.getElementById("info-models").appendChild(table);
+                    document.getElementById("infoModel").appendChild(table);
                 </script>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="infoModel?action=2&idModel=<%= model.getIdModelCarte() %>">
+                        <form method="POST" action="infoModelUp?idModel=<%= model.getIdModelCarte() %>">
                             <div class="row">
                                 <h3 class="form-label">Update Model</h3>
 
