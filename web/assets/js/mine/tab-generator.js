@@ -42,7 +42,10 @@ function generateTable(headers, data, dataType) {
             rowsListVente(tbody, data);
             break;
         case "listSerie" :
-            rowsListSerie(tbody, data);
+            rowsListSerie(tbody, data, true);
+            break;
+        case "searchSeries" :
+            rowsListSerie(tbody, data, false);
             break;
         case "infoVente" :
             rowsInfoTransaction(tbody, data);
@@ -170,7 +173,7 @@ function rowsListCarte(tbody, data) {
     });
 }
 
-function rowsListSerie(tbody, data) {
+function rowsListSerie(tbody, data, actions = false) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -192,6 +195,10 @@ function rowsListSerie(tbody, data) {
             <td class="border-bottom-0">
                 <p class="fw-semibold mb-0">${item.DateFinSerie}</p>
             </td>
+        `;
+
+        if (actions) {
+            row.innerHTML += `
             <td class="border-bottom-0">
                 <div class="d-flex align-items-center gap-2">
                     <a href="seriesUp?action=1&idSerie=${item.idSerie}">
@@ -202,7 +209,8 @@ function rowsListSerie(tbody, data) {
                     </a>
                 </div>
             </td>
-        `;
+            `;
+        }
 
         // Ajouter la ligne à tbody
         tbody.appendChild(row);

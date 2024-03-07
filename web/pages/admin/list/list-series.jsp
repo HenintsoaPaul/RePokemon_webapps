@@ -25,7 +25,7 @@
         <div class="card-body">
             <div id="list-info-series">
                 <script>
-                    const headers = ['Id', 'Nom Serie', 'Nombre episodes', 'Debut Serie', 'Fin Serie'];
+                    const headers = ['Id', 'Nom Serie', 'Nombre episodes', 'Debut Serie', 'Fin Serie', 'Actions'];
                     const data = [
                         <% for ( Serie serie : series ) { %>
                         {
