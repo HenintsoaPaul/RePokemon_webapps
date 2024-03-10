@@ -39,7 +39,10 @@ function generateTable(headers, data, dataType) {
             rowsListCarte(tbody, data);
             break;
         case "listInfoVente" :
-            rowsListVente(tbody, data);
+            rowsListVente(tbody, data, true);
+            break;
+        case "searchVentes" :
+            rowsListVente(tbody, data, false);
             break;
         case "listSerie" :
             rowsListSerie(tbody, data, true);
@@ -217,7 +220,7 @@ function rowsListSerie(tbody, data, actions = false) {
     });
 }
 
-function rowsListVente(tbody, data) {
+function rowsListVente(tbody, data, actions = false) {
     data.forEach(item => {
         const row = document.createElement('tr');
 
@@ -242,6 +245,10 @@ function rowsListVente(tbody, data) {
             <td class="border-bottom-0">
                 <h6 class="fw-semibold mb-0">${item.NomVendeur}</h6>
             </td>
+        `;
+
+        if (actions) {
+            row.innerHTML += `
             <td class="border-bottom-0">
                 <div class="d-flex align-items-center gap-2">
                     <a href="ventesUp?action=1&idVente=${item.idVente}">
@@ -252,7 +259,8 @@ function rowsListVente(tbody, data) {
                     </a>
                 </div>
             </td>
-        `;
+            `;
+        }
 
         // Ajouter la ligne à tbody
         tbody.appendChild(row);

@@ -10,7 +10,7 @@
     vente = ( Vente ) request.getAttribute( "vente" );
     String action = "ventesUp?action=1";
     if ( vente != null ) {
-        action = "ventesUp?action=2&idVente=" + vente.getIdCarte();
+        action = "ventesUp?action=2&idVente=" + vente.getIdVente();
     }
 
     String notification = "", notificationClass = "";
@@ -44,11 +44,9 @@
                 <div class="card-body">
                     <div class="card">
                         <div class="card-body">
-
                             <form method="POST" action="<%= action %>">
                                 <div class="row">
                                     <h3 class="form-label">Informations about the Vente</h3>
-
                                     <div class="col-lg-7 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
@@ -75,7 +73,6 @@
                                     <div class="col-lg-5 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
-
                                                 <div class="mb-3">
                                                     <label for="idCarte" class="form-label">Id Carte</label>
                                                     <select class="form-select" id="idCarte" name="idCarte"
@@ -124,22 +121,18 @@
                                                         <% } %>
                                                     </select>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div>
                                     <button type="submit" class="btn btn-success">Submit</button>
                                 </div>
-
                                 <br>
                                 <div class="<%= notificationClass %>" role="alert">
                                     <%= notification %>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
