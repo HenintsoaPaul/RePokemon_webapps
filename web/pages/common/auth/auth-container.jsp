@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="web/assets/images/logos/favicon.png"/>
     <link rel="stylesheet" href="web/assets/css/styles.min.css"/>
+    <link rel="stylesheet" href="web/assets/css/mine.css"/>
 </head>
 <body>
 <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
