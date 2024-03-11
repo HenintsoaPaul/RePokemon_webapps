@@ -28,7 +28,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="cartes?action=1" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
+                            <span><i class="ti ti-cards"></i></span>
                             <span class="hide-menu">Cartes</span>
                         </a>
                     </li>
@@ -40,39 +40,84 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="series?action=1" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
+                            <span><i class="ti ti-device-desktop"></i></span>
                             <span class="hide-menu">Series</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="ventes?action=1" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
+                            <span><i class="ti ti-coin"></i></span>
                             <span class="hide-menu">Ventes</span>
                         </a>
                     </li>
 
+                    <!-- SEARCH -->
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">EXPLORATION</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="search" aria-expanded="false">
+                            <span><i class="ti ti-backpack"></i></span>
+                            <span class="hide-menu">Explorer, Rechercher, ...</span>
+                        </a>
+                    </li>
+                    <%-- drop down --%>
+                    <li class="sidebar-item">
+                        <a class="nav-link nav-icon-hover sidebar-link" href="javascript:void(0)" id="drop2"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            <span><i class="ti ti-telescope"></i></span>
+                            <span class="hide-menu">Recherche</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                             aria-labelledby="drop2">
+                            <div class="message-body">
+                                <a href="cartes?action=2"
+                                   class="d-flex align-items-center gap-2 dropdown-item">
+                                    <i class="ti ti-cards fs-6"></i>
+                                    <p class="mb-0 fs-3">Carte</p>
+                                </a>
+                                <a href="models?action=2"
+                                   class="d-flex align-items-center gap-2 dropdown-item">
+                                    <i class="ti ti-layout-dashboard fs-6"></i>
+                                    <p class="mb-0 fs-3">Model</p>
+                                </a>
+                                <a href="series?action=2"
+                                   class="d-flex align-items-center gap-2 dropdown-item">
+                                    <i class="ti ti-device-desktop fs-6"></i>
+                                    <p class="mb-0 fs-3">Serie</p>
+                                </a>
+                                <a href="ventes?action=2"
+                                   class="d-flex align-items-center gap-2 dropdown-item">
+                                    <i class="ti ti-coin fs-6"></i>
+                                    <p class="mb-0 fs-3">Vente</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <%-- drop down --%>
+
+                    <!-- SUPP -->
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">SUPP</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="infoPokemonAdd?action=1" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Add Pokemon</span>
+                        <a class="sidebar-link" href="pokemons?action=1" aria-expanded="false">
+                            <span><i class="ti ti-pokeball"></i></span>
+                            <span class="hide-menu">Pokemons</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="typesAdd" aria-expanded="false">
                             <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Add Type</span>
+                            <span class="hide-menu">Types</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="generationsAdd" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Add Generation</span>
+                            <span><i class="ti ti-diamonds"></i></span>
+                            <span class="hide-menu">Generations</span>
                         </a>
                     </li>
                     <% } %>
@@ -109,55 +154,17 @@
                         </a>
                     </li>
 
-                    <!-- SEARCH -->
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">EXPLORATION</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="search" aria-expanded="false">
-                            <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Explorer, Rechercher, ...</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="cartes?action=2" aria-expanded="false">
-                            <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche Carte</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="models?action=2" aria-expanded="false">
-                            <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche Model</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="series?action=2" aria-expanded="false">
-                            <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche Serie</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ventes?action=2" aria-expanded="false">
-                            <span><i class="ti ti-backpack"></i></span>
-                            <span class="hide-menu">Recherche Vente</span>
-                        </a>
-                    </li>
-
                     <!-- AUTH -->
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">AUTH</span>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="userAuthf" aria-expanded="false">
                             <span><i class="ti ti-login"></i></span>
                             <span class="hide-menu">Change Account</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="userRegister" aria-expanded="false">
                             <span><i class="ti ti-user-plus"></i></span>
