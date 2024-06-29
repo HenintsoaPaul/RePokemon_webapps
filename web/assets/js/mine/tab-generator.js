@@ -615,7 +615,7 @@ function rowsListInfoPokemon(tbody, data) {
                 <p class="fw-bolder mb-0">${item.NomGeneration}</p>
             </td>
             <td class="border-bottom-0">
-                <a href="infoPokemonUp?idPokemon=${item.idPokemon}">
+                <a href="pokemons?idPokemon=${item.idPokemon}">
                     <span class="badge bg-primary rounded-3 fw-semibold">Modifier</span>
                 </a>
             </td>
