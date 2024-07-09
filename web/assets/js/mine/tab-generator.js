@@ -115,10 +115,10 @@ function rowsEstimation(tbody, data) {
                 <a href="infoModel?action=2&idModelCarte=${item.idModelCarte}"><h6 class="fw-semibold mb-0">${item.nomModelCarte}</h6></a>
                 </td>
             <td class="border-bottom-0">
-                <span class="fw-semibold mb-0 fs-4"><mark>${item.prixProprio}</mark></span><span class="mb-0 fw-normal">Ariary MG</span>
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.prixProprio}</mark></span><span class="mb-0 fw-normal">Ar MG</span>
                 </td>
             <td class="border-bottom-0">
-                <span class="fw-semibold mb-0 fs-4"><mark>${item.prixMarche}</mark></span><span class="mb-0 fw-normal">Ariary MG</span>
+                <span class="fw-semibold mb-0 fs-4"><mark>${item.prixMarche}</mark></span><span class="mb-0 fw-normal">Ar MG</span>
                 </td>
             <td class="border-bottom-0">
                 <p class="mb-0 fw-bolder">${item.dateFabrication}</p>
@@ -144,11 +144,11 @@ function rowsListCarte(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.PrixProprio}</mark></span>
-                <span class="mb-0 fw-normal"> Ariary MG</span>
+                <span class="mb-0 fw-normal"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.PrixMarche}</mark></span>
-                <span class="mb-0 fw-normal"> Ariary MG</span>
+                <span class="mb-0 fw-normal"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <p class="fw-semibold mb-0">${item.DateFabrication}</p>
@@ -234,7 +234,7 @@ function rowsListVente(tbody, data, actions = false) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
-                <span class="mb-0 fw-normal"> Ariary MG</span>
+                <span class="mb-0 fw-normal"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
@@ -281,7 +281,7 @@ function rowsInfoTransaction(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
-                <span class="mb-0 fw-normal"> Ariary MG</span>
+                <span class="mb-0 fw-normal"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
@@ -313,7 +313,7 @@ function rowsListTransactions(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.MontantVente}</mark></span>
-                <span class="mb-0 fw-normal"> Ariary MG</span>
+                <span class="mb-0 fw-normal"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <h6 class="fw-semibold mb-0">${item.idCarte}</h6>
@@ -359,13 +359,13 @@ function rowsSearchMine(tbody, data) {
                 <span class="mb-0 fs-4 fw-semibold">
                     <mark>${item.PrixProprio}</mark>
                 </span>
-                <span class="fw-normal mb-0"> Ariary MG</span>
+                <span class="fw-normal mb-0"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <span class="mb-0 fs-4 fw-semibold">
                     <mark>${item.PrixMarche}</mark>
                 </span>
-                <span class="fw-normal mb-0"> Ariary MG</span>
+                <span class="fw-normal mb-0"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <p class="fw-bolder mb-0">${item.DateFabrication}</p>
@@ -408,7 +408,7 @@ function rowsSearchModels(tbody, data) {
                 <span class="mb-0 fs-4 fw-semibold">
                     <mark>${item.PrixMarche}</mark>
                 </span>
-                <span class="fw-normal mb-0"> Ariary MG</span>
+                <span class="fw-normal mb-0"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <p class="fw-bolder mb-0">${item.DateSortieModel}</p>
@@ -453,13 +453,13 @@ function rowsSearchOthers(tbody, data) {
                 <span class="mb-0 fs-4 fw-semibold">
                     <mark>${item.PrixProprio}</mark>
                 </span>
-                <span class="fw-normal mb-0"> Ariary MG</span>
+                <span class="fw-normal mb-0"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <span class="mb-0 fs-4 fw-semibold">
                     <mark>${item.PrixMarche}</mark>
                 </span>
-                <span class="fw-normal mb-0"> Ariary MG</span>
+                <span class="fw-normal mb-0"> Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <p class="fw-bolder mb-0">${item.DateFabrication}</p>
@@ -510,7 +510,7 @@ function rowsInfoModel(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.prixMarche}</mark></span>
-                <span class="mb-0 fw-normal">Ariary MG</span>
+                <span class="mb-0 fw-normal">Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <h6 class="fw-bolder mb-0">${item.dateSortieModel}</h6>
@@ -551,7 +551,7 @@ function rowsListInfoModel(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <span class="fw-semibold mb-0 fs-4"><mark>${item.prixMarche}</mark></span>
-                <span class="mb-0 fw-normal">Ariary MG</span>
+                <span class="mb-0 fw-normal">Ar MG</span>
             </td>
             <td class="border-bottom-0">
                 <h6 class="fw-bolder mb-0">${item.dateSortieModel}</h6>
