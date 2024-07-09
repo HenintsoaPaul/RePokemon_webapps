@@ -7,7 +7,7 @@
     <title><%= title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="web/assets/images/logos/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="web/assets/images/pokemons/pkg.svg"/>
     <link rel="stylesheet" href="web/assets/css/styles.min.css"/>
     <link rel="stylesheet" href="web/assets/css/mine.css"/>
 </head>
