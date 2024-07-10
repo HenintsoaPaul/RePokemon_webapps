@@ -83,29 +83,41 @@
     const idUser = <%= idUser %>;
     const ventes = <%= jsonVentes %>;
 
-    console.log(`idUser = ${idUser}`);
-    console.log(ventes);
+    // console.log(`idUser = ${idUser}`);
+    // console.log(ventes);
 
     let mesAchats = [], mesVentes = [], dateTransaction = [];
     ventes.forEach(vente => {
-        if (vente.idUser_vendeur === idUser) {
-            mesVentes.push(vente.montantVente);
-            dateTransaction.push(vente.dateVente);
-        } else if (vente.idUser_acheteur === idUser) {
-            mesAchats.push(vente.montantVente);
+        if (!dateTransaction.includes(vente.dateVente)) {
             dateTransaction.push(vente.dateVente);
         }
     });
 
+    dateTransaction.forEach(date => {
+        let tempVente = [], tempAchat = [];
+        for( let i = 0; i < ventes.length; i ++ ) {
+            if (ventes[i].idUser_vendeur === idUser && ventes[i].dateVente === date) {
+                tempVente.push(ventes[i].montantVente);
+            } else if (ventes[i].idUser_acheteur === idUser && ventes[i].dateVente === date) {
+                tempAchat.push(ventes[i].montantVente);
+            }
+        }
+
+        // Sommer les ventes dans temp, puis ajouter dans mesVentes
+        mesVentes.push(tempVente.reduce((a, b) => a + b, 0));
+
+        // Sommer les achats dans temp, puis ajouter dans mesAchats
+        mesAchats.push(tempAchat.reduce((a, b) => a + b, 0));
+    });
 
     var chart = {
         series: [
             {
-                name: "Earnings :",
+                name: "Somme Vente",
                 data: mesVentes
             },
             {
-                name: "Expense :",
+                name: "Somme Achat",
                 data: mesAchats
             },
         ],
