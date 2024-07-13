@@ -84,10 +84,6 @@
     const idUser = <%= idUser %>;
     const ventes = <%= jsonVentes %>;
 
-    function getYear(date) {
-        return new Date(date).getFullYear().toString();
-    }
-
     const select = document.getElementById("year_select");
     select.addEventListener('change', () => {
         const yearSelected = select.value === "-" ? 
@@ -97,17 +93,25 @@
         updateChart(filteredVentes);
     });
 
-    let mesAchats = [], mesVentes = [], dateTransaction = [];
-    function updateChart(ventes) {
-        mesAchats = [];
-        mesVentes = [];
-        dateTransaction = [];
+    
+    function getYear(date) {
+        return new Date(date).getFullYear().toString();
+    }
 
+    function getDateTransaction(ventes) {
+        let dateTransaction = [];
         ventes.forEach(vente => {
             if (!dateTransaction.includes(vente.dateVente)) {
                 dateTransaction.push(vente.dateVente);
             }
         });
+        return dateTransaction;
+    }
+
+    function updateChart(ventes) {
+        mesAchats = [];
+        mesVentes = [];
+        dateTransaction = getDateTransaction(ventes);
 
         dateTransaction.forEach(date => {
             let tempVente = [], tempAchat = [];
@@ -123,24 +127,37 @@
             mesAchats.push(tempAchat.reduce((a, b) => a + b, 0));
         });
 
-        var oldChartElement = document.querySelector("#chart");
+        const oldChartElement = document.querySelector("#chart");
         if (oldChartElement) {
             oldChartElement.innerHTML = '';
         }
 
-        var updatedSeries = [
-            {
-                name: "Somme Vente",
-                data: mesVentes
-            },
-            {
-                name: "Somme Achat",
-                data: mesAchats
-            },
+        const updatedSeries = [
+            { name: "Somme Vente", data: mesVentes },
+            { name: "Somme Achat", data: mesAchats },
         ];
 
-        var updatedChartConfig = {
-            series: updatedSeries,
+        renderChart(
+            xaxisData = updatedSeries, 
+            yaxisData = dateTransaction
+        );
+    }
+    
+    function renderChart(xaxisData, yaxisData) {
+        const chartContainer = document.querySelector("#chart");
+        chartContainer.innerHTML = '';
+
+        const updatedChartConfig = {
+            series: xaxisData,
+            chart: {
+                type: "bar",
+                height: 500,
+                offsetX: -15,
+                toolbar: {show: true},
+                foreColor: "#adb0bb",
+                fontFamily: 'inherit',
+                sparkline: {enabled: false},
+            },
             chart: {
                 type: "bar",
                 height: 500,
@@ -180,7 +197,7 @@
             },
             xaxis: {
                 type: "category",
-                categories: dateTransaction,
+                categories: yaxisData,
                 labels: {
                     style: {cssClass: "grey--text lighten-2--text fill-color"},
                 },
@@ -217,11 +234,11 @@
             ]
         };
 
-        var updatedChart = new ApexCharts(document.querySelector("#chart"), updatedChartConfig);
+        var updatedChart = new ApexCharts(chartContainer, updatedChartConfig);
         updatedChart.render();
     }
 
-    updateChart(ventes);
 
+    updateChart(ventes);
     var chart = null;
 </script>
