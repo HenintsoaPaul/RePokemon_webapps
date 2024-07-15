@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="views.InfoPokemon" %>
-<%@ page import="entities.Type" %>
-<%@ page import="entities.Generation" %>
+<%@ page import="entities.supp.Type" %>
+<%@ page import="entities.supp.Generation" %>
 <%
     InfoPokemon infoPokemon = ( InfoPokemon ) request.getAttribute( "infoPokemon" );
     List<Type> types = ( List<Type> ) request.getAttribute( "types" );
