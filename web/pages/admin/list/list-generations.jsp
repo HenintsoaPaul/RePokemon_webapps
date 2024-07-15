@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="entities.Generation" %>
+<%@ page import="entities.supp.Generation" %>
 <%
     List<Generation> generations = ( List<Generation> ) request.getAttribute( "generations" );
 
