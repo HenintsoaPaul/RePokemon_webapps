@@ -120,8 +120,6 @@
                             <span class="hide-menu">Generations</span>
                         </a>
                     </li>
-                    <% } %>
-
 
                     <!-- COLLECTION -->
                     <li class="nav-small-cap">
@@ -141,7 +139,7 @@
                         <span class="hide-menu">MARKET</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="vente?action=1" aria-expanded="false">
+                        <a class="sidebar-link" href="achat?action=1" aria-expanded="false">
                             <span><i class="ti ti-shopping-cart-plus"></i></span>
                             <span class="hide-menu">Acheter des Cartes</span>
                         </a>

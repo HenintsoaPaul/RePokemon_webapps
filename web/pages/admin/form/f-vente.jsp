@@ -140,3 +140,37 @@
         </section>
     </div>
 </div>
+
+<script>
+    const selectCarte = document.getElementById("idCarte");
+    const selectVendeur = document.getElementById("idUser_vendeur");
+
+    function setIdUser_vendeur(idUser_vendeur) {
+        for (let i = 0; i < selectVendeur.options.length; i++) {
+            if (selectVendeur.options[i].value == idUser_vendeur) {
+                selectVendeur.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    selectCarte.addEventListener('change', function() {
+        const idCarte = +selectCarte.value;
+        if (idCarte > 0) {
+            fetch('/RePokemon/cartes?action=3&id=' + idCarte)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const idUser_vendeur = data['idUser'];
+                    setIdUser_vendeur(idUser_vendeur);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+            }
+        })
+</script>

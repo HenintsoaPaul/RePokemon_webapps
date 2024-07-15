@@ -326,10 +326,10 @@ function rowsListTransactions(tbody, data) {
             </td>
             <td class="border-bottom-0">
                 <div class="d-flex align-items-center gap-2">
-                    <a href="vente?action=3&idVente=${item.idVente}">
+                    <a href="ventesUp?action=1&idVente=${item.idVente}">
                         <span class="badge bg-success rounded-3 fw-semibold">Modifier</span>
                     </a>
-                    <a href="vente?action=4&idVente=${item.idVente}">
+                    <a href="achat?action=4&idVente=${item.idVente}">
                         <span class="badge bg-danger rounded-3 fw-semibold">Supprimer</span>
                     </a>
                 </div>

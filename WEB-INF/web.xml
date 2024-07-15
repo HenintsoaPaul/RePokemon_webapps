@@ -91,6 +91,15 @@
         <servlet-name>VenteUpServlet</servlet-name>
         <url-pattern>/ventesUp</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Achat</servlet-name>
+        <servlet-class>servlets.AchatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Achat</servlet-name>
+        <url-pattern>/achat</url-pattern>
+    </servlet-mapping>
     <!-- Vente -->
     <!-- Main -->
 
@@ -113,7 +122,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PokemonServlet</servlet-name>
-        <url-pattern>/infoPokemonAdd</url-pattern>
+        <url-pattern>/pokemons</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -122,7 +131,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PokemonUpServlet</servlet-name>
-        <url-pattern>/infoPokemonUp</url-pattern>
+        <url-pattern>/pokemonsUp</url-pattern>
     </servlet-mapping>
     <!-- InfoPokemon -->
 

@@ -8,11 +8,11 @@
         int achatCode = Integer.parseInt( request.getParameter( "achatCode" ) );
         switch ( achatCode ) {
             case 1:
-                achatMsg = "Carte achetee successfully!";
+                achatMsg = "Success!";
                 achatMsgClass = "alert alert-success";
                 break;
             case 0:
-                achatMsg = "Oops! Something wrong happened during Achat.";
+                achatMsg = "Oops! An error happened.";
                 achatMsgClass = "alert alert-danger";
                 break;
         }
@@ -26,7 +26,7 @@
 
                     <h5 class="card-title fw-semibold mb-4">Collection</h5>
                     <div class="alert alert-primary" role="alert">
-                        <p>Welcome to the Market</p>
+                        <h1>Welcome to the Market</h1>
                     </div>
 
                     <% if ( cartesEnVente != null ) { %>
@@ -99,7 +99,7 @@
                                                     </td>
                                                     <td class="border-bottom-0">
                                                         <div class="d-flex align-items-center gap-2">
-                                                            <a href="vente?action=2&idCarte=<%= infoCarte.getIdCarte() %>">
+                                                            <a href="achat?action=2&idCarte=<%= infoCarte.getIdCarte() %>">
                                                                 <span class="badge bg-success rounded-3 fw-semibold">Acheter</span>
                                                             </a>
                                                         </div>
