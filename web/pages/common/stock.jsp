@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Collection</h5>
                     <div class="alert alert-primary" role="alert">
-                        <p>Welcome to your collection</p>
+                        <h2>Welcome to your collection</h2>
                     </div>
                     <% if ( mesCartes != null ) { %>
                     <div class="<%= jetMsgClass %>" role="alert">
@@ -79,11 +79,11 @@
                                                     </td>
                                                     <td class="border-bottom-0">
                                                         <span class="fw-semibold mb-0 fs-4"><mark><%= maCarte.getPrixProprio() %></mark></span>
-                                                        <span class="mb-0 fw-normal">Ariary MG</span>
+                                                        <span class="mb-0 fw-normal">Ar MG</span>
                                                     </td>
                                                     <td class="border-bottom-0">
                                                         <span class="fw-semibold mb-0 fs-4"><mark><%= maCarte.getPrixMarche() %></mark></span>
-                                                        <span class="mb-0 fw-normal">Ariary MG</span>
+                                                        <span class="mb-0 fw-normal">Ar MG</span>
                                                     </td>
                                                     <td class="border-bottom-0">
                                                         <p class="mb-0 fw-bolder"><%= maCarte.getDateFabrication() %>
@@ -115,7 +115,7 @@
                     <div class="<%= jetMsgClass %>" role="alert">
                         <p>
                             <mark>Aucune carte</mark>
-                            n'est dans votre collection pour le moment
+                            n'est dans votre collection pour le moment.
                         </p>
                     </div>
                     <% } %>

@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= request.getParameter( "title" ) %>
-    </title>
-    <link rel="shortcut icon" type="image/png" href="web/assets/images/logos/favicon.png"/>
+    <title><%= request.getParameter( "title" ) %></title>
+    <link rel="shortcut icon" type="image/png" href="web/assets/images/pokemons/pkg.svg"/>
     <link rel="stylesheet" href="web/assets/css/styles.min.css"/>
 
+    <link rel="stylesheet" href="web/assets/css/mine.css"/>
     <script src="web/assets/js/mine/tab-generator.js"></script>
 
     <script src="web/assets/libs/jquery/dist/jquery.min.js"></script>

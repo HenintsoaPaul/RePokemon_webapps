@@ -1,0 +1,15 @@
+#logo {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+button > a {
+    text-decoration: none;
+    color: black;
+}
+
+button > a:hover {
+    text-decoration: none;
+    color: black;
+}

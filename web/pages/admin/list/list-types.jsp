@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="entities.Type" %>
+<%@ page import="entities.supp.Type" %>
 <%
     List<Type> types = ( List<Type> ) request.getAttribute( "types" );
 

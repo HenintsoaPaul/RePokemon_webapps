@@ -38,12 +38,13 @@
                                 <h5 class="card-title fw-semibold">Sales Overview</h5>
                             </div>
                             <div>
-                                <select class="form-select">
-                                    <option value="1">March 2023</option>
-                                    <option value="2">April 2023</option>
-                                    <option value="3">May 2023</option>
-                                    <option value="4">June 2023</option>
-                                </select>
+                                <form>
+                                    <select class="form-select" id="year_select">
+                                        <option value="-">Tout</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                </form>
                             </div>
                         </div>
                         <div id="chart"></div>
@@ -83,124 +84,161 @@
     const idUser = <%= idUser %>;
     const ventes = <%= jsonVentes %>;
 
-    console.log(`idUser = ${idUser}`);
-    console.log(ventes);
-
-    let mesAchats = [], mesVentes = [], dateTransaction = [];
-    ventes.forEach(vente => {
-        if (vente.idUser_vendeur === idUser) {
-            mesVentes.push(vente.montantVente);
-            dateTransaction.push(vente.dateVente);
-        } else if (vente.idUser_acheteur === idUser) {
-            mesAchats.push(vente.montantVente);
-            dateTransaction.push(vente.dateVente);
-        }
+    const select = document.getElementById("year_select");
+    select.addEventListener('change', () => {
+        const yearSelected = select.value === "-" ? 
+            undefined : select.value;
+        const filteredVentes = yearSelected ? 
+            ventes.filter(v => getYear(v.dateVente) === yearSelected) : ventes;
+        updateChart(filteredVentes);
     });
 
+    
+    function getYear(date) {
+        return new Date(date).getFullYear().toString();
+    }
 
-    var chart = {
-        series: [
-            {
-                name: "Earnings :",
-                data: mesVentes
-            },
-            {
-                name: "Expense :",
-                data: mesAchats
-            },
-        ],
+    function getDateTransaction(ventes) {
+        let dateTransaction = [];
+        ventes.forEach(vente => {
+            if (!dateTransaction.includes(vente.dateVente)) {
+                dateTransaction.push(vente.dateVente);
+            }
+        });
+        return dateTransaction;
+    }
 
-        chart: {
-            type: "bar",
-            height: 500,
-            offsetX: -15,
-            toolbar: {show: true},
-            foreColor: "#adb0bb",
-            fontFamily: 'inherit',
-            sparkline: {enabled: false},
-        },
+    function updateChart(ventes) {
+        mesAchats = [];
+        mesVentes = [];
+        dateTransaction = getDateTransaction(ventes);
 
-
-        colors: ["#5D87FF", "#49BEFF"],
-
-
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: "35%",
-                borderRadius: [6],
-                borderRadiusApplication: 'end',
-                borderRadiusWhenStacked: 'all'
-            },
-        },
-        markers: {size: 0},
-
-        dataLabels: {
-            enabled: false,
-        },
-
-
-        legend: {
-            show: false,
-        },
-
-
-        grid: {
-            borderColor: "rgba(0,0,0,0.1)",
-            strokeDashArray: 3,
-            xaxis: {
-                lines: {
-                    show: false,
-                },
-            },
-        },
-
-        xaxis: {
-            type: "category",
-            categories: dateTransaction,
-            labels: {
-                style: {cssClass: "grey--text lighten-2--text fill-color"},
-            },
-        },
-
-
-        yaxis: {
-            show: true,
-            min: 0,
-            max: 1000,
-            tickAmount: 10,
-            labels: {
-                style: {
-                    cssClass: "grey--text lighten-2--text fill-color",
-                },
-            },
-        },
-        stroke: {
-            show: true,
-            width: 3,
-            lineCap: "butt",
-            colors: ["transparent"],
-        },
-
-
-        tooltip: {theme: "light"},
-
-        responsive: [
-            {
-                breakpoint: 600,
-                options: {
-                    plotOptions: {
-                        bar: {
-                            borderRadius: 3,
-                        }
-                    },
+        dateTransaction.forEach(date => {
+            let tempVente = [], tempAchat = [];
+            for(let i = 0; i < ventes.length; i++) {
+                if (ventes[i].idUser_vendeur === idUser && ventes[i].dateVente === date) {
+                    tempVente.push(ventes[i].montantVente);
+                } else if (ventes[i].idUser_acheteur === idUser && ventes[i].dateVente === date) {
+                    tempAchat.push(ventes[i].montantVente);
                 }
             }
-        ]
+
+            mesVentes.push(tempVente.reduce((a, b) => a + b, 0));
+            mesAchats.push(tempAchat.reduce((a, b) => a + b, 0));
+        });
+
+        const oldChartElement = document.querySelector("#chart");
+        if (oldChartElement) {
+            oldChartElement.innerHTML = '';
+        }
+
+        const updatedSeries = [
+            { name: "Somme Vente", data: mesVentes },
+            { name: "Somme Achat", data: mesAchats },
+        ];
+
+        renderChart(
+            xaxisData = updatedSeries, 
+            yaxisData = dateTransaction
+        );
+    }
+    
+    function renderChart(xaxisData, yaxisData) {
+        const chartContainer = document.querySelector("#chart");
+        chartContainer.innerHTML = '';
+
+        const updatedChartConfig = {
+            series: xaxisData,
+            chart: {
+                type: "bar",
+                height: 500,
+                offsetX: -15,
+                toolbar: {show: true},
+                foreColor: "#adb0bb",
+                fontFamily: 'inherit',
+                sparkline: {enabled: false},
+            },
+            chart: {
+                type: "bar",
+                height: 500,
+                offsetX: -15,
+                toolbar: {show: true},
+                foreColor: "#adb0bb",
+                fontFamily: 'inherit',
+                sparkline: {enabled: false},
+            },
+            colors: ["#5D87FF", "#49BEFF"],
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: "35%",
+                    borderRadius: [6],
+                    borderRadiusApplication: 'end',
+                    borderRadiusWhenStacked: 'all'
+                },
+            },
+            markers: {
+                size: 0
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            legend: {
+                show: false,
+            },
+            grid: {
+                borderColor: "rgba(0,0,0,0.1)",
+                strokeDashArray: 3,
+                xaxis: {
+                    lines: {
+                        show: false,
+                    },
+                },
+            },
+            xaxis: {
+                type: "category",
+                categories: yaxisData,
+                labels: {
+                    style: {cssClass: "grey--text lighten-2--text fill-color"},
+                },
+            },
+            yaxis: {
+                show: true,
+                min: 0,
+                max: 60000,
+                tickAmount: 5,
+                labels: {
+                    style: {
+                        cssClass: "grey--text lighten-2--text fill-color",
+                    },
+                },
+            },
+            stroke: {
+                show: true,
+                width: 3,
+                lineCap: "butt",
+                colors: ["transparent"],
+            },
+            tooltip: {theme: "light"},
+            responsive: [
+                {
+                    breakpoint: 600,
+                    options: {
+                        plotOptions: {
+                            bar: {
+                                borderRadius: 3,
+                            }
+                        }
+                    }
+                }
+            ]
+        };
+
+        var updatedChart = new ApexCharts(chartContainer, updatedChartConfig);
+        updatedChart.render();
+    }
 
 
-    };
-
-    var chart = new ApexCharts(document.querySelector("#chart"), chart);
-    chart.render();
+    updateChart(ventes);
+    var chart = null;
 </script>

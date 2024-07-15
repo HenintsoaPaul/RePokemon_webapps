@@ -49,7 +49,7 @@
             <div>
                 <button type="button" class="btn btn-success m-1">
                     <a href="modelsUp?action=3">
-                        Add new Carte
+                        Add new Model
                     </a>
                 </button>
                 <div class="<%= notificationClass %>" role="alert">
