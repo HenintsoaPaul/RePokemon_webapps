@@ -120,6 +120,17 @@
                             <span class="hide-menu">Generations</span>
                         </a>
                     </li>
+                    <% } else { %>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">ENTITIES</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="series?action=1" aria-expanded="false">
+                                <span><i class="ti ti-device-desktop"></i></span>
+                                <span class="hide-menu">Series</span>
+                            </a>
+                        </li>
                     <% } %>
 
 
