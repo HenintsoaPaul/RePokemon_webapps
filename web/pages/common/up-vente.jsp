@@ -1,6 +1,6 @@
 <%@ page import="views.InfoVente" %>
 <%
-    InfoVente infoVente = ( InfoVente ) request.getAttribute( "infoVente" );
+    InfoVente infoVente = ( InfoVente ) request.getAttribute( "vente" );
 
     String upMsg = "", upMsgClass = "";
     if ( request.getParameter( "upMsg" ) != null ) {
