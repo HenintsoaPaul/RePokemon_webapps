@@ -120,6 +120,7 @@
                             <span class="hide-menu">Generations</span>
                         </a>
                     </li>
+                    <% } %>
 
                     <!-- COLLECTION -->
                     <li class="nav-small-cap">
