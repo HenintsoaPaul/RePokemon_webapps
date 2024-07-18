@@ -46,7 +46,7 @@
                         <div class="card-body">
                             <form method="POST" action="<%= action %>">
                                 <div class="row">
-                                    <h3 class="form-label">Informations about the Vente</h3>
+                                    <h3 class="form-label">Informations sur la Vente</h3>
                                     <div class="col-lg-7 col-md-12">
                                         <div class="card">
                                             <div class="card-body">

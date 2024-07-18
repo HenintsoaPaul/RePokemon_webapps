@@ -30,12 +30,12 @@
     <div class="container-fluid">
         <%-- Chart JS --%>
         <div class="row">
-            <div class="col-lg-12 d-flex align-items-strech">
+            <div class="col-lg-8 d-flex align-items-strech">
                 <div class="card w-100">
                     <div class="card-body">
                         <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                             <div class="mb-3 mb-sm-0">
-                                <h5 class="card-title fw-semibold">Sales Overview</h5>
+                                <h5 class="card-title fw-semibold">Mes Transactions</h5>
                             </div>
                             <div>
                                 <form>
@@ -51,6 +51,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-4">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <!-- Yearly Breakup -->
+                    <div class="card overflow-hidden">
+                      <div class="card-body p-4">
+                        <h4 class="card-title mb-9 fw-semibold">Benefices</h4>
+                        <div class="row align-items-center">
+                          <div class="col-8">
+                            <h1 class="fw-semibold mb-3 d-flex flex-row align-items-center" id="benef">
+                            </h1>
+                          </div>
+                          <div class="col-4">
+                            <div class="d-flex justify-content-center">
+                              <div id="benef-chart"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+
         </div>
         <%-- Chart JS --%>
 
@@ -80,6 +105,9 @@
         <%-- List Vente --%>
     </div>
 </section>
+<script src="web/assets/js/mine/benef.chart.js"></script>
+<script src="web/assets/js/mine/transaction.chart.js"></script>
+<script src="web/assets/js/mine/dashboard.js"></script>
 <script>
     const idUser = <%= idUser %>;
     const ventes = <%= jsonVentes %>;
@@ -90,155 +118,13 @@
             undefined : select.value;
         const filteredVentes = yearSelected ? 
             ventes.filter(v => getYear(v.dateVente) === yearSelected) : ventes;
-        updateChart(filteredVentes);
+        updateChart( '#chart', '#benef', '#benef-chart', idUser, filteredVentes);
     });
 
-    
-    function getYear(date) {
-        return new Date(date).getFullYear().toString();
-    }
-
-    function getDateTransaction(ventes) {
-        let dateTransaction = [];
-        ventes.forEach(vente => {
-            if (!dateTransaction.includes(vente.dateVente)) {
-                dateTransaction.push(vente.dateVente);
-            }
-        });
-        return dateTransaction;
-    }
-
-    function updateChart(ventes) {
-        mesAchats = [];
-        mesVentes = [];
-        dateTransaction = getDateTransaction(ventes);
-
-        dateTransaction.forEach(date => {
-            let tempVente = [], tempAchat = [];
-            for(let i = 0; i < ventes.length; i++) {
-                if (ventes[i].idUser_vendeur === idUser && ventes[i].dateVente === date) {
-                    tempVente.push(ventes[i].montantVente);
-                } else if (ventes[i].idUser_acheteur === idUser && ventes[i].dateVente === date) {
-                    tempAchat.push(ventes[i].montantVente);
-                }
-            }
-
-            mesVentes.push(tempVente.reduce((a, b) => a + b, 0));
-            mesAchats.push(tempAchat.reduce((a, b) => a + b, 0));
-        });
-
-        const oldChartElement = document.querySelector("#chart");
-        if (oldChartElement) {
-            oldChartElement.innerHTML = '';
-        }
-
-        const updatedSeries = [
-            { name: "Somme Vente", data: mesVentes },
-            { name: "Somme Achat", data: mesAchats },
-        ];
-
-        renderChart(
-            xaxisData = updatedSeries, 
-            yaxisData = dateTransaction
-        );
+    function getYear( date ) {
+        return new Date( date ).getFullYear().toString();
     }
     
-    function renderChart(xaxisData, yaxisData) {
-        const chartContainer = document.querySelector("#chart");
-        chartContainer.innerHTML = '';
-
-        const updatedChartConfig = {
-            series: xaxisData,
-            chart: {
-                type: "bar",
-                height: 500,
-                offsetX: -15,
-                toolbar: {show: true},
-                foreColor: "#adb0bb",
-                fontFamily: 'inherit',
-                sparkline: {enabled: false},
-            },
-            chart: {
-                type: "bar",
-                height: 500,
-                offsetX: -15,
-                toolbar: {show: true},
-                foreColor: "#adb0bb",
-                fontFamily: 'inherit',
-                sparkline: {enabled: false},
-            },
-            colors: ["#5D87FF", "#49BEFF"],
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: "35%",
-                    borderRadius: [6],
-                    borderRadiusApplication: 'end',
-                    borderRadiusWhenStacked: 'all'
-                },
-            },
-            markers: {
-                size: 0
-            },
-            dataLabels: {
-                enabled: false,
-            },
-            legend: {
-                show: false,
-            },
-            grid: {
-                borderColor: "rgba(0,0,0,0.1)",
-                strokeDashArray: 3,
-                xaxis: {
-                    lines: {
-                        show: false,
-                    },
-                },
-            },
-            xaxis: {
-                type: "category",
-                categories: yaxisData,
-                labels: {
-                    style: {cssClass: "grey--text lighten-2--text fill-color"},
-                },
-            },
-            yaxis: {
-                show: true,
-                min: 0,
-                max: 60000,
-                tickAmount: 5,
-                labels: {
-                    style: {
-                        cssClass: "grey--text lighten-2--text fill-color",
-                    },
-                },
-            },
-            stroke: {
-                show: true,
-                width: 3,
-                lineCap: "butt",
-                colors: ["transparent"],
-            },
-            tooltip: {theme: "light"},
-            responsive: [
-                {
-                    breakpoint: 600,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 3,
-                            }
-                        }
-                    }
-                }
-            ]
-        };
-
-        var updatedChart = new ApexCharts(chartContainer, updatedChartConfig);
-        updatedChart.render();
-    }
-
-
-    updateChart(ventes);
-    var chart = null;
+    updateChart( '#chart', '#benef', '#benef-chart', idUser, ventes);
+    let chart = null;
 </script>
